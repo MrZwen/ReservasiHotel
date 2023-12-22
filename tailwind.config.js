@@ -4,6 +4,7 @@ export default {
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     // themeVariants: ['dark'],
@@ -191,6 +192,7 @@ export default {
     boxShadow: ['focus', 'dark:focus'],
   },
   plugins: [
+    require('flowbite/plugin')
     // require('tailwindcss-multi-theme'),
     // require('@tailwindcss/custom-forms'),
     // plugin(({ addUtilities, e, theme, variants }) => {

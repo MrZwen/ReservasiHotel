@@ -4,3 +4,17 @@
 /* This one is not necessary. Tailwind will
 automatically inject it at compile time. */
 @tailwind variants;
+
+@layer components {
+    .t-desktop{
+        top: 40%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+    }
+
+    .t-mobile{
+        top: 20%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+    }
+}

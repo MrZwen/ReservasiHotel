@@ -22,11 +22,11 @@
             @endif
             <div class="mb-5">
                 <label for="username" class="font-bold block mb-3">Username</label>
-                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="text" value="{{ old('username') }}" name="username" autocomplete="off" placeholder="Username" />
+                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full " type="text" value="{{ old('username') }}" name="username" autocomplete="off" placeholder="Username" />
             </div>
             <div class="mb-5">
                 <label for="password" class="font-bold block mb-3">Password</label>
-                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="password" name="password" autocomplete="off" placeholder="Password" />
+                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full" type="password" name="password" autocomplete="off" placeholder="Password" />
             </div>
 
             <div class="flex justify-between mt-6">

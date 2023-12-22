@@ -21,7 +21,7 @@
         ></script>
         <script src="{{'./assets/js/charts-lines.js'}}" defer></script>
         <script src="{{'./assets/js/charts-pie.js'}}" defer></script>
-        @vite('assets/css/app.css')
+        @vite('resources/css/app.css')
     </head>
   <body>
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900"
