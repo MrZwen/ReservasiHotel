@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/admin', [UserController::class, 'admin']);
     Route::get('/settings', [UserController::class, 'settings']);
     Route::get('/profile', [UserController::class, 'profile']);
+    Route::get('/setting', [UserController::class, 'settings']);
     Route::get('/kamar', [UserController::class, 'kamar']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });

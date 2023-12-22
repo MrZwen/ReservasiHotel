@@ -3,7 +3,7 @@
 {{-- Start Content --}}
     @include('admin/layouts/partials.sidebar')
     <div class="flex flex-col flex-1 w-full">
-        <main class="h-full ocerflow-y-auto">
+        <main class="h-full overflow-y-auto">
             <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
                 <div
                   class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300"
