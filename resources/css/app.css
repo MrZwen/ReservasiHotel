@@ -7,14 +7,15 @@ automatically inject it at compile time. */
 
 @layer components {
     .t-desktop{
-        top: 40%; 
+        top: 39%; 
         left: 50%; 
         transform: translate(-50%, -50%);
     }
 
     .t-mobile{
-        top: 20%; 
+        top: 17%; 
         left: 50%; 
         transform: translate(-50%, -50%);
     }
 }
+

@@ -18,15 +18,15 @@
              <div class="flex flex-wrap mx-0 mb-6 w-full">
                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                      <label for="" class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2">Username</label>
-                     <input type="text" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="{{Auth::user()->username}}" disabled>
+                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{Auth::user()->username}}" disabled>
                  </div>
                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                      <label for="" class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2">Email</label>
-                     <input type="text" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="{{Auth::user()->email}}" disabled>
+                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{Auth::user()->email}}" disabled>
                  </div>
-                 <div class="w-full px-3 mb-6 md:mb-0">
+                 <div class="w-full px-3 mb-6 mt-2">
                      <label for="" class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2">Telepone</label>
-                     <input type="text" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" value="{{Auth::user()->no_hp}}" disabled>
+                     <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="{{Auth::user()->no_hp}}" disabled>
                  </div>
              </div>
         </form>
