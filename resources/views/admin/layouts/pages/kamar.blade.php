@@ -24,9 +24,9 @@
                             <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
                             <td class="px-4 py-3">{{ $item->tipe_kamar }}</td>
                             <td class="px-4 py-3">{{ $item->no_kamar }}</td>
-                            <td class="px-4 py-3">{{ $item->harga }}</td>
+                            <td class="px-4 py-3">Rp {{ number_format($item->harga, 0, ',', '.') }}</td>
                             <td class="px-4 py-3">
-                                <div class="flex items-center justify-center space-x-4 text-sm"> <!-- Updated this line -->
+                                <div class="flex items-center justify-center space-x-4 text-sm">
                                     <button
                                         class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                         aria-label="Edit"
