@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kamar;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -19,6 +20,7 @@ class UserController extends Controller
     }
 
     function kamar(){
-        return view('admin.layouts.pages.kamar');
+        $data = Kamar::orderBy('created_at', 'desc')->paginate(5);
+        return view('admin.layouts.pages.kamar', ['data' => $data]);
     }
 }
