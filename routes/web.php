@@ -30,5 +30,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/profile', [UserController::class, 'profile']);
     Route::get('/setting', [UserController::class, 'settings']);
     Route::get('/kamar', [UserController::class, 'kamar']);
+    Route::get('/edit/{$id}', [UserController::class, 'edit']);
+    Route::get('/hapus', [UserController::class, 'hapus']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });

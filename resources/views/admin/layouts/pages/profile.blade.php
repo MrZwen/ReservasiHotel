@@ -1,10 +1,11 @@
 @extends('admin.main')
 
 @section('contentAdmin')
-    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Profile</h2>
-    
-
-    <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">{{Auth::user()->username}} Profile</h4>
+    <div class="">
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">{{Auth::user()->username}} Profile
+            <hr class="h-px rounded bg-gray-200 border-0 dark:bg-gray-700">
+        </h2>
+    </div>
     
     <div class="mx-4 mb-8 bg-white shadow-md rounded-lg text-gray-900 dark:bg-gray-800 relative">
         <div class="flex justify-center items-center">

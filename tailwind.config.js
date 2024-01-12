@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
-    "./node_modules/flowbite/**/*.js",
-    "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+      "./resources/**/*.blade.php",
+      "./resources/**/*.js",
+      "./resources/**/*.vue",
+      "./node_modules/flowbite/**/*.js",
+      "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
   ],
   theme: {
-    // themeVariants: ['dark'],
+    themeVariants: ['dark'],
     colors: {
       transparent: 'transparent',
       white: '#ffffff',
@@ -68,6 +68,8 @@ export default {
         '700': '#b43403',
         '800': '#8a2c0d',
         '900': '#771d1d',
+        '901': '#FBC102',
+        '902': '#C7923E'
       },
       yellow: {
         '50': '#fdfdea',
