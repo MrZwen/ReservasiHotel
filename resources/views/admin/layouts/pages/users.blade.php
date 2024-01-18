@@ -1,12 +1,13 @@
 @extends('admin.main')
 
 @section('contentAdmin')
-<div class="">
-    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">Kamar Hotel
-        <hr class="h-px rounded bg-gray-200 border-0 dark:bg-gray-700">
-    </h2>
-</div>
-@if(session()->has('message'))
+    <div class="">
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">Users
+            <hr class="h-px rounded bg-gray-200 border-0 dark:bg-gray-700">
+        </h2>
+    </div>
+
+    @if(session()->has('message'))
     <div id="toast-success" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800" role="alert">
         <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -33,9 +34,9 @@
             <thead>
                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                     <th class="px-4 py-3">No</th>
-                    <th class="px-4 py-3">Tipe Kamar</th>
-                    <th class="px-4 py-3">No Kamar</th>
-                    <th class="px-4 py-3">Harga</th>
+                    <th class="px-4 py-3">Username</th>
+                    <th class="px-4 py-3">Email</th>
+                    <th class="px-4 py-3">Role</th>
                     <th class="px-4 py-3">Actions</th>
                 </tr>
             </thead>
@@ -43,9 +44,9 @@
                     @foreach ($data as $item)
                         <tr class="text-gray-700 dark:text-gray-400">
                             <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
-                            <td class="px-4 py-3">{{ $item->tipe_kamar }}</td>
-                            <td class="px-4 py-3">{{ $item->no_kamar }}</td>
-                            <td class="px-4 py-3">Rp.{{ number_format($item->harga, 0, ',', '.') }}</td>
+                            <td class="px-4 py-3">{{ $item->username }}</td>
+                            <td class="px-4 py-3">{{ $item->email }}</td>
+                            <td class="px-4 py-3">{{$item->role}}</td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center justify-center space-x-4 text-sm">
                                     <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#editModal{{ $item->id }}">
@@ -58,15 +59,14 @@
                                 </div>
                             </td>
                         </tr>
-                        @include('admin.layouts.pages.modal.edit-kamar')
+                        @include('admin.layouts.pages.modal.edit-users')
                     @endforeach
                     
             </tbody>
         </table>
     </div>
     {{-- Modal Tambah --}}
-    @include('admin.layouts.pages.modal.tambah-kamar')
-    {{-- End Modal Tambah --}}
+    @include('admin.layouts.pages.modal.tambah-users')
     <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
         <span class="flex items-center col-span-3 mx-5">
                 Showing {{ $data->firstItem() }}-{{ $data->lastItem() }} of {{ $data->total() }}
@@ -78,6 +78,4 @@
         </span>
     </div>
 </div>
- 
-    
 @endsection

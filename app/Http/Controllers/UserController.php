@@ -18,18 +18,4 @@ class UserController extends Controller
     function profile(){
         return view('admin.layouts.pages.profile');
     }
-
-    function kamar(){
-        $data = Kamar::orderBy('created_at', 'desc')->paginate(5);
-        return view('admin.layouts.pages.kamar', ['data' => $data]);
-    }
-
-    function edit($id){
-        $kamar = Kamar::findOrFail($id);
-        return view('admin.layouts.pages.kamar', compact('kamar'));
-    }
-
-    function hapus(){
-
-    }
 }

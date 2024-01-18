@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DataController;
+use App\Http\Controllers\KamarController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,12 +27,18 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function(){
+    // Admin
     Route::get('/admin', [UserController::class, 'admin']);
     Route::get('/settings', [UserController::class, 'settings']);
     Route::get('/profile', [UserController::class, 'profile']);
     Route::get('/setting', [UserController::class, 'settings']);
-    Route::get('/kamar', [UserController::class, 'kamar']);
-    Route::get('/edit/{$id}', [UserController::class, 'edit']);
-    Route::get('/hapus', [UserController::class, 'hapus']);
+    // Start Kamar
+    Route::get('/kamar', [KamarController::class, 'kamar']);
+    Route::post('/admin/tambah-kamar', [KamarController::class, 'add']);
+    Route::get('/admin/edit-kamar/{id}', [KamarController::class, 'showEditModal'])->name('edit-kamar');
+    Route::put('admin/edit-kamar', [KamarController::class, 'editKamar'])->name('edit-kamar.submit');
+    Route::get('admin/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
+    // End Kamar
+    Route::get('/user', [DataController::class, 'users']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });
