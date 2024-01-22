@@ -15,16 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['guest'])->group(function(){
+Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login',[AuthController::class, 'authenticating']);
+    Route::post('/login', [AuthController::class, 'authenticating']);
+
+    //register
+    Route::get('/register', [UserController::class, 'register'])->name('register');
+    Route::post('/register', [UserController::class, 'store']);
 });
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [UserController::class, 'admin']);
     Route::get('/settings', [UserController::class, 'settings']);
     Route::get('/profile', [UserController::class, 'profile']);
