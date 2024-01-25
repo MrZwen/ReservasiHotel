@@ -40,13 +40,13 @@ class KamarController extends Controller
     public function editKamar(Request $request)
     {
         $this->validate($request, [
-            'id' => 'required|exists:kamar,id',
+            'id_kamar' => 'required|exists:kamar,id',
             'tipe_kamar' => 'required|string',
             'no_kamar' => 'required|string',
             'harga' => 'required|numeric',
         ]);
 
-        $kamar = Kamar::findOrFail($request->id);
+        $kamar = Kamar::findOrFail($request->id_kamar);
         $kamar->update([
             'tipe_kamar' => $request->tipe_kamar,
             'no_kamar' => $request->no_kamar,
