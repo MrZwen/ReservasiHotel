@@ -40,18 +40,17 @@ class KamarController extends Controller
     public function editKamar(Request $request)
     {
         $this->validate($request, [
-            'id_kamar' => 'required|exists:kamar,id',
+            'id' => 'required|exists:kamar,id',
             'tipe_kamar' => 'required|string',
             'no_kamar' => 'required|string',
             'harga' => 'required|numeric',
         ]);
 
-        $kamar = Kamar::findOrFail($request->id_kamar);
+        $kamar = Kamar::findOrFail($request->id);
         $kamar->update([
             'tipe_kamar' => $request->tipe_kamar,
             'no_kamar' => $request->no_kamar,
             'harga' => $request->harga,
-            // Add other fields as needed
         ]);
 
         return redirect()->back()->with('message', 'Data kamar berhasil diupdate.');
