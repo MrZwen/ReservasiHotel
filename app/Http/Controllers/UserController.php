@@ -11,6 +11,10 @@ class UserController extends Controller
         return view('admin.layouts.pages.dashboard');
     }
 
+    function pegawai(){
+        return view('pegawai.layouts.pages.dashboard');
+    }
+
     function settings(){
         return view('admin.layouts.pages.settings');
     }

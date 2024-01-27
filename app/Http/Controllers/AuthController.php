@@ -1,13 +1,37 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     function login(){
         return view('auth.login');
+    }
+
+    function register()
+    {
+        return view('auth.register');
+    }
+
+    function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'username' => ['required', 'min:3', 'max:255', 'unique:users'],
+            'password' => 'required|min:5|max:255',
+            'email' => 'required|min:5|max:255',
+            'no_hp' => 'required|min:5|max:255',
+            'role' => 'required'
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::create($validatedData);
+        return redirect('/login');
     }
 
     function logout(Request $request){
@@ -30,9 +54,9 @@ class AuthController extends Controller
             if ($user->role == 'admin') {
                 return redirect()->intended('/admin');
             } elseif ($user->role == 'pegawai') {
-                return redirect()->route('pegawai.index');
+                return redirect()->intended('/pegawai');
             } elseif($user->role == 'costumer'){
-                return redirect()->route('landing');
+                return redirect()->intended('landing');
             }
         }
     
