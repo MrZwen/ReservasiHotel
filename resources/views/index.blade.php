@@ -12,8 +12,8 @@
                         <h1 class="font-bold text-4xl lg:text-7xl md:text-[24px] leading-tight text-center mt-4">Enjoy A Lexury Experience</h1>
                         <p class="text-center text-gray-700 lg:text-lg md:text-[18px] opacity-50 mt-2">Indulge in Opulence: Elevate Your Lifestyle with a Luxurious Experience</p>
                         <div class="flex flex-col md:flex-row justify-center gap-4 py-6">
-                            <button class="py-3 px-8 bg-yellow-500 text-white text-base rounded-full">Get Started</button>
-                            <button class="py-3 px-8 bg-white border border-[#C7923E] text-gray-900 font-medium text-base rounded-full">Login</button>
+                            <button class="py-3 px-8 bg-yellow-500 text-white text-base rounded-full hover:opacity-87">Get Started</button>
+                            <a href="/login" class="py-3 px-8 bg-white border border-[#C7923E] text-gray-900 font-medium text-base rounded-full ">Login</a>
                         </div>
                         <div class="flex lg:text-start justify-center items-center space-x-6 mt-4 mb-6">
                             <i class="fa-brands fa-whatsapp"></i>

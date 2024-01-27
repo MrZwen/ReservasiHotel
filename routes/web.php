@@ -18,8 +18,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['guest'])->group(function(){
+    // Login
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login',[AuthController::class, 'authenticating']);
+
+     //register
+     Route::get('/register', [AuthController::class, 'register'])->name('register');
+     Route::post('/register', [AuthController::class, 'store']);
 });
 
 Route::get('/', function () {
@@ -41,4 +46,7 @@ Route::middleware(['auth'])->group(function(){
     // End Kamar
     Route::get('/user', [DataController::class, 'users']);
     Route::get('/logout', [AuthController::class, 'logout']);
+
+    // Pegawai
+    Route::get('/pegawai', [UserController::class, 'pegawai']);
 });
