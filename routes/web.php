@@ -49,4 +49,13 @@ Route::middleware(['auth'])->group(function(){
 
     // Pegawai
     Route::get('/pegawai', [UserController::class, 'pegawai']);
+    // Start Kamar
+    Route::get('pegawai-kamar', [KamarController::class, 'kamarpegawai']);
+    Route::post('/pegawai/tambah-kamar', [KamarController::class, 'add']);
+    Route::get('/pegawai/edit-kamar/{id}', [KamarController::class, 'showEditModal'])->name('edit-kamar');
+    Route::put('pegawai/edit-kamar', [KamarController::class, 'editKamar'])->name('edit-kamar.submit');
+    Route::get('pegawai/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
+    // End Kamar
+    Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
+    Route::get('/logout', [AuthController::class, 'logout']);
 });

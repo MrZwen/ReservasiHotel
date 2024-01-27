@@ -11,4 +11,9 @@ class DataController extends Controller
         $data = User::orderBy('id', 'desc')->paginate(5);
         return view('admin.layouts.pages.users', ['data' => $data]);
     }
+
+    function pegawaiuser(){
+        $data = User::orderBy('id', 'desc')->paginate(5);
+        return view('pegawai.layouts.pages.users', ['data' => $data]);
+    }
 }

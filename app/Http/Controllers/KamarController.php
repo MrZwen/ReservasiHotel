@@ -12,6 +12,10 @@ class KamarController extends Controller
         $data = Kamar::orderBy('created_at', 'desc')->paginate(5);
         return view('admin.layouts.pages.kamar', ['data' => $data]);
     }
+    function kamarpegawai(){
+        $data = Kamar::orderBy('created_at', 'desc')->paginate(5);
+        return view('pegawai.layouts.pages.kamar', ['data' => $data]);
+    }
 
     function add(Request $request){
         $data = $request->validate([

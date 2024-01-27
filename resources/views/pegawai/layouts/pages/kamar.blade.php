@@ -1,8 +1,8 @@
-@extends('admin.main')
+@extends('pegawai.main')
 
-@section('contentAdmin')
+@section('contentpegawai')
 <div class="">
-    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">Kamar Hotel
+    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">pegawai view kamar hotel
         <hr class="h-px rounded bg-gray-200 border-0 dark:bg-gray-700">
     </h2>
 </div>
@@ -51,21 +51,21 @@
                                     <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#editModal{{ $item->id }}">
                                         <i class="fas fa-pen-to-square"></i>
                                     </button>
-                                    <a href="{{url('admin/hapus-kamar/'.$item->id)}}" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85  rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" 
+                                    <a href="{{url('pegawai/hapus-kamar/'.$item->id)}}" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85  rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" 
                                     aria-label="Delete">
                                     <i class="fa-solid fa-trash-can"></i>   
                                     </a>
                                 </div>
                             </td>
                         </tr>
-                        @include('admin.layouts.pages.modal.edit-kamar')
+                        @include('pegawai.layouts.pages.modal.edit-kamar')
                     @endforeach
                     
             </tbody>
         </table>
     </div>
     {{-- Modal Tambah --}}
-    @include('admin.layouts.pages.modal.tambah-kamar')
+    @include('pegawai.layouts.pages.modal.tambah-kamar')
     {{-- End Modal Tambah --}}
     <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
         <span class="flex items-center col-span-3 mx-5">
