@@ -33,7 +33,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class>
+    <section class="">
         <div class="container mx-auto px-4 py-32 mt-6">
             <div class="flex flex-wrap grid grid-cols-12 justify-center items-center">
                 <div class="col-span-12 col-span-4 order-2">
@@ -117,7 +117,7 @@
 
     <!-- Product Section -->
     <section>
-        <div class="container mx-auto lg:h-screen mt-12"">
+        <div class="container mx-auto lg:h-screen mt-12">
             <div class="flex justify-between mt-4 pt-8">
                 <div>
                     <h1 class="font-bold text-3xl mb-2">Our Room & Suites</h1>
@@ -203,13 +203,13 @@
     <!-- About 2 -->
     <section>
         <div class="container mx-auto px-8 py-32 pt-8">
-            <div class="lg:flex lg:flex-wrap grid grid-cols-12 justify-center items-center pt-24">
-                <div class="col-span-12 lg:col-span-4 w-full px-4 self-end">
-                    <div class="basis-[55%] md:text-start lg:text-start">
-                        <h1 class="font-bold text-3xl lg:text-7xl md:text-[24px] leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
+            <div class="flex flex-wrap grid grid-cols-12 justify-center items-center pt-24">
+                <div class="col-span-12 col-span-4 w-full px-4 self-end">
+                    <div class="basis-[55%] md:text-start text-start">
+                        <h1 class="font-bold text-3xl text-7xl md:text-[24px] leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
                             La Vie Hotel
                         </h1>
-                        <p class="lg:text-left text-[18px] lg:text-lg md:text-[18px] mt-2">
+                        <p class="text-left text-[18px] text-lg md:text-[18px] mt-2">
                             La Vie Hotel, tersembunyi di tengah hutan, menawarkan pengalaman menginap yang mewah dengan pemandangan sungai yang mengalir lembut, menciptakan atmosfer damai dan alami bagi para tamu.
                         </p>
                         <div class="mt-6 text-gray-400 text-2xl font-bold leading-[28.80px] tracking-tight">
@@ -217,13 +217,13 @@
                             <p>Rolio Club</p>
                             <p>In Room Dinning</p>
                         </div>
-                        <div class="flex lg:justify-start gap-4 py-6">
+                        <div class="flex justify-start gap-4 py-6">
                             <button class="py-3 px-8 bg-yellow-500 text-white text-base rounded-full">Learn More</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-span-12 lg:col-span-8 w-full mt-4 px-4 self-center">
-                    <div class="lg:mr-12 order-2">
+                <div class="col-span-12 col-span-8 w-full mt-4 px-4 self-center">
+                    <div class="mr-12 order-2">
                         <img src="img/hotelview.png" class="rounded-sm" alt="">
                     </div>
                 </div>
@@ -234,21 +234,21 @@
     <!-- About 3 -->
     <section>
         <div class="container mx-auto px-8 py-32 pt-8">
-            <div class="lg:flex lg:flex-wrap grid grid-cols-12 justify-center items-center pt-24">
-                <div class="col-span-12 lg:col-span-8 w-full mt-4 px-4 self-center">
-                    <div class="lg:mr-12 order-2">
+            <div class="flex flex-wrap grid grid-cols-12 justify-center items-center pt-24">
+                <div class="col-span-12 col-span-8 w-full mt-4 px-4 self-center">
+                    <div class="mr-12 order-2">
                         <img src="img/about3.png" class="rounded-sm" alt="">
                     </div>
                 </div>
-                <div class="col-span-12 lg:col-span-4 w-full px-4 self-end">
-                    <div class="basis-[55%] md:text-start lg:text-start">
-                        <h1 class="font-bold text-3xl lg:text-7xl md:text-[24px] leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
+                <div class="col-span-12 col-span-4 w-full px-4 self-end">
+                    <div class="basis-[55%] md:text-start text-start">
+                        <h1 class="font-bold text-3xl text-7xl md:text-[24px] leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
                             Jazucci Private Spa
                         </h1>
-                        <p class="lg:text-left text-[18px] lg:text-lg md:text-[18px] mt-2">
+                        <p class="text-left text-[18px] text-lg md:text-[18px] mt-2">
                             Jazucci Private Spa adalah tempat pelarian eksklusif yang menawarkan pengalaman relaksasi tanpa tanding dengan fasilitas jacuzzi pribadi, memadukan kemewahan spa dan privasi untuk menciptakan momen-momen penuh kenyamanan dan ketenangan bagi para tamu.
                         </p>
-                        <div class="flex lg:justify-start gap-4 py-6">
+                        <div class="flex justify-start gap-4 py-6">
                             <button class="py-3 px-8 bg-yellow-500 text-white text-base rounded-full">Learn More</button>
                         </div>
                     </div>
@@ -260,16 +260,16 @@
     <!-- About 4 -->
     <section>
         <div class="container mx-auto px-8 py-32 pt-8">
-            <div class="lg:flex lg:flex-wrap grid grid-cols-12 justify-center items-center pt-24">
-                <div class="col-span-12 lg:col-span-4 w-full px-4 self-end">
-                    <div class="basis-[55%] md:text-start lg:text-start">
-                        <h1 class="font-bold text-3xl lg:text-7xl md:text-[24px] leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
+            <div class="flex flex-wrap grid grid-cols-12 justify-center items-center pt-24">
+                <div class="col-span-12 col-span-4 w-full px-4 self-end">
+                    <div class="basis-[55%] md:text-start text-start">
+                        <h1 class="font-bold text-3xl text-7xl md:text-[24px] leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
                             Ocenia Waterpool
                         </h1>
-                        <p class="lg:text-left text-[18px] lg:text-lg md:text-[18px] mt-2">
+                        <p class="text-left text-[18px] text-lg md:text-[18px] mt-2">
                             Ocenia Waterpool adalah sebuah kolam renang yang menakjubkan yang tersembunyi di tengah hutan, menawarkan pengalaman renang yang mempesona di bawah naungan pepohonan hijau yang lebat. Dengan air yang jernih dan sejuk, kolam renang ini memberikan kesan menyatu dengan alam sekitar. Pemandangan luar biasa dari tepi kolam memperlihatkan keindahan alam hutan yang memukau, menciptakan suasana tenang dan memanjakan bagi setiap pengunjung yang mencari ketenangan di dalam hutan yang asri.
                         </p>
-                        <div class="flex lg:justify-start gap-4 py-6">
+                        <div class="flex justify-start gap-4 py-6">
                             <button class="py-3 px-8 bg-yellow-500 text-white text-base rounded-full">Learn More</button>
                         </div>
                     </div>
