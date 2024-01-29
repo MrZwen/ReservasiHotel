@@ -25,26 +25,17 @@
                 <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="text" value="{{ old('username') }}" name="username" autocomplete="off" placeholder="Masukkan Username..." />
             </div>
             <div class="mb-5">
-                <label for="password" class="font-bold block mb-3">Password</label>
-                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="password" value="{{ old('password') }}" name="password" autocomplete="off" placeholder="Masukkan Password..." />
+                <label for="email" class="font-bold block mb-3">Email</label>
+                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="email" value="{{ old('email') }}" name="email" autocomplete="off" placeholder="Masukkan email anda..." />
             </div>
             <div class="mb-5">
-                <label for="email" class="font-bold block mb-3">Email</label>
-                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="email" name="email" autocomplete="off" placeholder="Masukkan email anda..." />
+                <label for="password" class="font-bold block mb-3">Password</label>
+                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="password" name="password" autocomplete="off" placeholder="Masukkan Password..." />
             </div>
             <div class="mb-5">
                 <label for="no_hp" class="font-bold block mb-3">Telepon</label>
-                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="text" name="no_hp" autocomplete="off" placeholder="Masukkan no hp anda..." />
+                <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" type="number" name="no_hp" autocomplete="off" placeholder="Masukkan no hp anda..." />
             </div>
-            <div class="mb-5">
-                <label for="role" class="font-bold block mb-3">Daftar Sebagai</label>
-                <select class="rounded font-semibold border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full focus:outline-blue-700" name="role" autocomplete="off" id="role">
-                    <option value="">Pilih</option>
-                    <option value="pegawai">Pegawai</option>
-                    <option value="customer">Customer</option>
-                </select>
-            </div>
-
             <div class="flex justify-between mt-6">
                 <button class="bg-blue-700 text-white px-5 py-2 rounded hover:bg-blue-600" type="submit">Daftar</button>
                 <a href="login" class="text-blue-700 font-bold">Punya akun?</a>

@@ -31,7 +31,7 @@
 
             <div class="flex justify-between mt-6">
                 <button class="bg-blue-700 text-white px-5 py-2 rounded hover:bg-blue-600">Sign In</button>
-                <a href="" class="text-blue-700 font-bold">Forgot Password?</a>
+                <a href="/register" class="text-blue-700 font-bold">Belum Punya Akun?</a>
             </div>
         </div>
     </div>
