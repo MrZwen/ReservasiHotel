@@ -20,7 +20,7 @@
             href="/admin"
           >
             <i class="fa-solid fa-house"></i>
-            <span class="ml-4">Dashboard</span>
+            <span class="ml-4">Profile</span>
           </a>
         </li>
       </ul>

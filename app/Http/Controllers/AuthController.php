@@ -22,7 +22,7 @@ class AuthController extends Controller
     {
         $validatedData = $request->validate([
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
-            'email' => 'required|min:5|max:255',
+            'email' => ['required', 'min:5', 'max:255', 'unique:users'],
             'password' => 'required|min:5|max:255',
             'no_hp' => 'required|min:5|max:255'
         ]);
@@ -56,9 +56,6 @@ class AuthController extends Controller
                 return redirect()->intended('/');
             }
         }
-    
-        // Authentication failed
-        // You can flash a message here if needed
         return redirect('login')->withErrors('Username Atau Password Yang Dimasukkan Tidak Sesuai!');
     }
 }
