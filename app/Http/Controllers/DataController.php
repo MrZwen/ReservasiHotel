@@ -29,13 +29,6 @@ class DataController extends Controller
         return view('pegawai.layouts.pages.users', ['data' => $data]);
     }
 
-    // public function showEditModalUser($id)
-    // {
-    //     $item = User::findOrFail($id);
-    //     $roles = User::distinct()->pluck('role')->toArray();
-    //     return view('admin.layouts.pages.modal.edit-users')->with('item', $item)->with('roles', $roles);
-    // }
-
     public function editUsers(Request $request)
     {
         $request->validate([

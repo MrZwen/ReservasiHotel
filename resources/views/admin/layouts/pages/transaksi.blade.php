@@ -30,10 +30,10 @@
         <thead>
             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                 <th class="px-4 py-3">No</th>
-                <th class="px-4 py-3">Username</th>
-                <th class="px-4 py-3">Email</th>
-                <th class="px-4 py-3">no_hp</th>
-                <th class="px-4 py-3">Role</th>
+                <th class="px-4 py-3">Status</th>
+                <th class="px-4 py-3">Bukti Pembayaran</th>
+                <th class="px-4 py-3">Tanggal Pembayaran</th>
+                <th class="px-4 py-3">Nominal</th>
                 <th class="px-4 py-3">Actions</th>
             </tr>
         </thead>
@@ -41,10 +41,10 @@
                 @foreach ($data as $item)
                     <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
-                        <td class="px-4 py-3">{{ $item->username }}</td>
-                        <td class="px-4 py-3">{{ $item->email }}</td>
-                        <td class="px-4 py-3">{{ $item->no_hp }}</td>
-                        <td class="px-4 py-3">{{$item->role}}</td>
+                        <td class="px-4 py-3">{{ $item->status }}</td>
+                        <td class="px-4 py-3">{{ $item->bukti_pembayaran }}</td>
+                        <td class="px-4 py-3">{{ $item->tgl_pembayaran }}</td>
+                        <td class="px-4 py-3">{{ $item->nominal }}</td>
                         <td class="px-4 py-3">
                             <div class="flex items-center justify-center space-x-4 text-sm">
                                 <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#editUser{{ $item->id }}">
