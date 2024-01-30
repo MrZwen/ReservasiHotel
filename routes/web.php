@@ -6,6 +6,7 @@ use App\Http\Controllers\KamarController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,10 +46,19 @@ Route::middleware(['auth'])->group(function(){
     Route::put('admin/edit-kamar', [KamarController::class, 'editKamar'])->name('edit-kamar.submit');
     Route::get('admin/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
     // End Kamar
+
     // Users
     Route::get('/user', [DataController::class, 'users']);
-    Route::get('/admin/edit-users/{id}', [UserController::class, 'showEditModalUser'])->name('edit-users');
-    Route::put('admin/edit-users', [UserController::class, 'editUsers'])->name('edit-users.submit');
+    Route::get('/admin/edit-users/{id}', [DataController::class, 'showEditModalUser'])->name('edit-users');
+    Route::put('admin/edit-users/{id}', [DataController::class, 'editUsers'])->name('edit-users.submit');
+    Route::get('admin/hapus-kamar/{id}', [DataController::class, 'delete'])->name('hapus-users');
+    // End Users
+
+    // Transaksi
+    Route::get('/transaksi', [DataController::class, 'transaksiadmin']);
+
+
+    // logout
     Route::get('/logout', [AuthController::class, 'logout']);
 
     // Pegawai
@@ -60,6 +70,9 @@ Route::middleware(['auth'])->group(function(){
     Route::put('pegawai/edit-kamar', [KamarController::class, 'editKamar'])->name('edit-kamar.submit');
     Route::get('pegawai/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
     // End Kamar
+
+    // Transaksi
+    Route::get('/transaksi', [DataController::class, 'transaksipegawai']);
     Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });

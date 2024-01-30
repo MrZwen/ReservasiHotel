@@ -58,6 +58,23 @@
           </a>
         </li>
       </ul>
+      <ul>
+        <li class="relative px-6 py-3">
+          @if(request()->is('transaksi'))
+                <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                    aria-hidden="true"></span>
+          @endif
+          <a
+            class="inline-flex items-center w-full text-sm font-semibold
+            @if(request()->is('transaksi')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
+            transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+            href="/transaksi"
+          >
+          <i class="fa-solid fa-user"></i>
+            <span class="ml-4">Transaksi</span>
+          </a>
+        </li>
+      </ul>
     </div>
 </aside>
   
@@ -140,6 +157,24 @@
               >
                 <i class="fa-solid fa-user"></i>
                 <span class="ml-4">Users</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="relative px-6 py-3">
+              @if(request()->is('transaksi'))
+                <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                    aria-hidden="true"></span>
+              @endif
+              <a
+                class="inline-flex items-center w-full text-sm font-semibold
+                @if(request()->is('transaksi')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
+                transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="/transaksi"
+              >
+                <i class="fa-solid fa-user"></i>
+                <span class="ml-4">Transaksi</span>
               </a>
             </li>
           </ul>
