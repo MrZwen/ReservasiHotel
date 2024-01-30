@@ -29,11 +29,15 @@ Route::middleware(['guest'])->group(function(){
      Route::post('/register', [AuthController::class, 'store']);
 });
 
+Route::middleware(['auth'])->group(function(){
+    Route::get('/logout', [AuthController::class, 'logout']);
+});
+
 Route::get('/', function () {
     return view('index');
 });
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // Admin
     Route::get('/admin', [UserController::class, 'admin']);
     Route::get('/settings', [UserController::class, 'settings']);
@@ -61,11 +65,13 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/transaksi', [DataController::class, 'simpantransaksi']);
 
     // logout
-    Route::get('/logout', [AuthController::class, 'logout']);
-
+    // Route::get('/logout', [AuthController::class, 'logout']);
+});
+    Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
      // Costumer
      Route::get('/costumer', [DataController::class, 'transaksicostumer']);
 
+Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
     // Pegawai
     Route::get('/pegawai', [UserController::class, 'pegawai']);
 
@@ -79,6 +85,6 @@ Route::middleware(['auth'])->group(function(){
     // End Kamar
 
     // Transaksi
-    Route::get('/transaksi', [DataController::class, 'transaksipegawai']);
+    Route::get('/transaksi-pegawai', [DataController::class, 'transaksipegawai']);
     Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
 });

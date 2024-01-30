@@ -16,9 +16,15 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->role != 'admin'){
-            abort(404);
+        $roles = array_slice(func_get_args(), 2);
+
+        foreach ($roles as $role) { 
+            $user = Auth::user()->role;
+            if( $user == $role){
+                return $next($request);
+            }
         }
-        return $next($request);
+
+        return redirect()->back();
     }
 }

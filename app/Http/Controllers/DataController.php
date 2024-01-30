@@ -23,7 +23,7 @@ class DataController extends Controller
 
     function transaksipegawai(){
         $data = Transaksi::orderBy('id', 'desc')->paginate(5);
-        return view('admin.layouts.pages.transaksi', ['data' => $data]);
+        return view('pegawai.layouts.pages.transaksi', ['data' => $data]);
     }
 
     function pegawaiuser(){

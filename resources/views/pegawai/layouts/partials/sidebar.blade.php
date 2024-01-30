@@ -60,17 +60,17 @@
       </ul>
       <ul>
         <li class="relative px-6 py-3">
-          @if(request()->is('pegawai-user'))
+          @if(request()->is('transaksi-pegawai'))
                 <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                     aria-hidden="true"></span>
           @endif
           <a
             class="inline-flex items-center w-full text-sm font-semibold
-            @if(request()->is('transaksi')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
+            @if(request()->is('transaksi-pegawai')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
             transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-            href="/transaksi"
+            href="/transaksi-pegawai"
           >
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-cash-register"></i>
             <span class="ml-4">Transkasi</span>
           </a>
         </li>
@@ -111,15 +111,15 @@
           </a>
           <ul class="mt-6">
             <li class="relative px-6 py-3">
-              @if(request()->is('admin'))
+              @if(request()->is('pegawai'))
                 <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                   aria-hidden="true"></span>
               @endif
               <a
                 class="inline-flex items-center w-full text-sm font-semibold
-                @if(request()->is('admin')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
+                @if(request()->is('pegawai')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
                 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="/admin"
+                href="/pegawai"
               >
                   <i class="fa-solid fa-house"></i>
                 <span class="ml-4">Profile</span>
@@ -128,15 +128,15 @@
           </ul>
           <ul>
             <li class="relative px-6 py-3">
-              @if(request()->is('kamar'))
+              @if(request()->is('pegawai-kamar'))
                 <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                     aria-hidden="true"></span>
               @endif
               <a
                 class="inline-flex items-center w-full text-sm font-semibold
-                @if(request()->is('kamar')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
+                @if(request()->is('pegawai-kamar')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
                 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="/kamar"
+                href="/pegawai-kamar"
               >
               <i class="fa-solid fa-clipboard-list text-lg"></i>
                 <span class="ml-4">Kamar</span>
@@ -145,15 +145,15 @@
           </ul>
           <ul>
             <li class="relative px-6 py-3">
-              @if(request()->is('user'))
+              @if(request()->is('pegawai-user'))
                 <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                     aria-hidden="true"></span>
               @endif
               <a
                 class="inline-flex items-center w-full text-sm font-semibold
-                @if(request()->is('user')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
+                @if(request()->is('pegawai-user')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
                 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="/user"
+                href="/pegawai-user"
               >
                 <i class="fa-solid fa-user"></i>
                 <span class="ml-4">Users</span>
@@ -162,17 +162,17 @@
           </ul>
           <ul>
             <li class="relative px-6 py-3">
-              @if(request()->is('user'))
+              @if(request()->is('pegawai-transaksi'))
                 <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                     aria-hidden="true"></span>
               @endif
               <a
                 class="inline-flex items-center w-full text-sm font-semibold
-                @if(request()->is('transaksi')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
+                @if(request()->is('pegawai-transaksi')) text-gray-800 dark:text-gray-200 @else text-gray-500 dark:bg-gray-600 @endif
                 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="/transaksi"
+                href="/pegawai-transaksi"
               >
-                <i class="fa-solid fa-user"></i>
+              <i class="fa-solid fa-cash-register"></i>
                 <span class="ml-4">Transaksi</span>
               </a>
             </li>
