@@ -32,6 +32,39 @@
         </div>
     </nav>
 
+    
+    <div class="w-full overflow-x-auto">
+        <table class="w-full whitespace-no-wrap">
+            <thead>
+                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
+                    <th class="px-4 py-3">Bukti Pembayaran</th>
+                    <th class="px-4 py-3">Tanggal Pembayaran</th>
+                    <th class="px-4 py-3">Nominal</th>
+                    <th class="px-4 py-3">Status</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                    @foreach ($data as $item)
+                    {{-- @dd($item) --}}
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3 justify-center flex"><img width="150px" src="img/{{$item->bukti_pembayaran}}" alt=""></td>
+                            <td class="px-4 py-3">{{ $item->tgl_pembayaran }}</td>
+                            <td class="px-4 py-3">{{ $item->nominal }}</td>
+                            @if ($item->status == "Belum Terverifikasi")
+                                <td class="px-4 py-3"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-700/10 uppercase">{{ str_replace('_', ' ', $item->status) }}</span></td>
+                            @endif
+                            @if ($item->status == "Terverifikasi")
+                                <td class="px-4 py-3"><span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">{{ str_replace('_', ' ', $item->status) }}</span>
+                            </td>
+                            @endif
+                        </tr>
+                        @include('admin.layouts.pages.modal.edit-verifikasi')
+                    @endforeach
+                    
+            </tbody>
+        </table>
+    </div>
+
     <!-- Hero Section -->
     <section class="">
         <div class="container mx-auto px-4 py-32 mt-6">

@@ -5,6 +5,7 @@ use App\Http\Controllers\DataController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 
@@ -34,7 +35,8 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::get('/', function () {
-    return view('index');
+    $data = Transaksi::where('id_users', Auth::user()->id)->get();
+    return view('index', ['data'=> $data]);
 });
 
 Route::middleware(['auth', 'checkRole:admin'])->group(function(){

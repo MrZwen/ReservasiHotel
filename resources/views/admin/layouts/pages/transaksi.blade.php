@@ -42,7 +42,7 @@
                 {{-- @dd($item) --}}
                     <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
-                        <td class="px-4 py-3">{{ $item->bukti_pembayaran }}</td>
+                        <td class="px-4 py-3 justify-center flex"><img width="150px" src="img/{{$item->bukti_pembayaran}}" alt=""></td>
                         <td class="px-4 py-3">{{ $item->tgl_pembayaran }}</td>
                         <td class="px-4 py-3">{{ $item->nominal }}</td>
                         @if ($item->status == "Belum Terverifikasi\r\n")
