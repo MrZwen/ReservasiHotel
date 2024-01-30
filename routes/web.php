@@ -61,17 +61,11 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // Transaksi
     Route::get('/transaksi', [DataController::class, 'transaksiadmin']);
 
-    // Transaksi
-    Route::post('/transaksi', [DataController::class, 'simpantransaksi']);
 
     // logout
     // Route::get('/logout', [AuthController::class, 'logout']);
 });
     Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
-     // Costumer
-     Route::get('/costumer', [DataController::class, 'transaksicostumer']);
-
-Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
     // Pegawai
     Route::get('/pegawai', [UserController::class, 'pegawai']);
 
@@ -88,3 +82,8 @@ Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
     Route::get('/transaksi-pegawai', [DataController::class, 'transaksipegawai']);
     Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
 });
+// Costumer
+Route::get('/costumer', [DataController::class, 'transaksicostumer']);
+
+ // Transaksi
+ Route::post('/transaksi', [DataController::class, 'simpantransaksi']);
