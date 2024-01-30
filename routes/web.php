@@ -78,9 +78,13 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     Route::get('pegawai/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
     // End Kamar
 
+    // Users
+    Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
+
     // Transaksi
     Route::get('/transaksi-pegawai', [DataController::class, 'transaksipegawai']);
-    Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
+    Route::post('/pegawai/verifikasi-transaksi', [DataController::class, 'verifikasipegawai']);
+    
 });
 // Costumer
 Route::get('/costumer', [DataController::class, 'transaksicostumer']);

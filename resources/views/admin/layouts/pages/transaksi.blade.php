@@ -58,10 +58,6 @@
                                 <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#editVerifikasi{{ $item->id_transaksi }}">
                                     <i class="fas fa-pen-to-square"></i>
                                 </button>
-                                <a href="{{url('admin/hapus-users/'.$item->id)}}" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85  rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" 
-                                aria-label="Delete">
-                                <i class="fa-solid fa-trash-can"></i>   
-                                </a>
                             </div>
                         </td>
                     </tr>
