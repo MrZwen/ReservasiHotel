@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ url('admin/verifikasi-transaksi') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('pegawai/verifikasi-transaksi') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <input type="hidden" name="id_transaksi" value="{{ $item->id_transaksi }}">

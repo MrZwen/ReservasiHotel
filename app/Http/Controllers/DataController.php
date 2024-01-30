@@ -54,6 +54,11 @@ class DataController extends Controller
         return redirect()->back();
     }
 
+    function verifikasipegawai(Request $request){
+        Transaksi::where('id_transaksi', $request->id_transaksi)->update(['status' => 'Terverifikasi']);
+        return redirect()->back();
+    }
+
     public function editUsers(Request $request)
     {
         $request->validate([
