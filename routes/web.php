@@ -61,8 +61,13 @@ Route::middleware(['auth'])->group(function(){
     // logout
     Route::get('/logout', [AuthController::class, 'logout']);
 
+     // Costumer
+     Route::get('/costumer', [DataController::class, 'transaksicostumer']);
+
     // Pegawai
     Route::get('/pegawai', [UserController::class, 'pegawai']);
+
+    
     // Start Kamar
     Route::get('pegawai-kamar', [KamarController::class, 'kamarpegawai']);
     Route::post('/pegawai/tambah-kamar', [KamarController::class, 'add']);
@@ -74,5 +79,4 @@ Route::middleware(['auth'])->group(function(){
     // Transaksi
     Route::get('/transaksi', [DataController::class, 'transaksipegawai']);
     Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
-    Route::get('/logout', [AuthController::class, 'logout']);
 });
