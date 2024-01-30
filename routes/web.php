@@ -42,16 +42,16 @@ Route::middleware(['auth'])->group(function(){
     // Start Kamar
     Route::get('/kamar', [KamarController::class, 'kamar']);
     Route::post('/admin/tambah-kamar', [KamarController::class, 'add']);
-    Route::get('/admin/edit-kamar/{id}', [KamarController::class, 'showEditModal'])->name('edit-kamar');
+    // Route::get('/admin/edit-kamar/{id}', [KamarController::class, 'showEditModal'])->name('edit-kamar');
     Route::put('admin/edit-kamar', [KamarController::class, 'editKamar'])->name('edit-kamar.submit');
     Route::get('admin/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
     // End Kamar
 
     // Users
     Route::get('/user', [DataController::class, 'users']);
-    Route::get('/admin/edit-users/{id}', [DataController::class, 'showEditModalUser'])->name('edit-users');
-    Route::put('admin/edit-users/{id}', [DataController::class, 'editUsers'])->name('edit-users.submit');
-    Route::get('admin/hapus-kamar/{id}', [DataController::class, 'delete'])->name('hapus-users');
+    // Route::get('/admin/edit-users/{id}', [DataController::class, 'showEditModalUser'])->name('edit-users');
+    Route::put('admin/edit-users', [DataController::class, 'editUsers'])->name('edit-users.submit');
+    Route::get('admin/hapus-users/{id}', [DataController::class, 'delete'])->name('hapus-users');
     // End Users
 
     // Transaksi

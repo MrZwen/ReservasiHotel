@@ -70,7 +70,7 @@
             transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
             href="/transaksi"
           >
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-cash-register"></i>
             <span class="ml-4">Transaksi</span>
           </a>
         </li>
@@ -173,7 +173,7 @@
                 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/transaksi"
               >
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-cash-register"></i>
                 <span class="ml-4">Transaksi</span>
               </a>
             </li>

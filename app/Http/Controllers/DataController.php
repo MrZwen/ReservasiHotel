@@ -10,7 +10,8 @@ class DataController extends Controller
 {
     function users(){
         $data = User::orderBy('id', 'desc')->paginate(5);
-        return view('admin.layouts.pages.users', ['data' => $data]);
+        $roles = User::distinct()->pluck('role')->toArray();
+        return view('admin.layouts.pages.users', ['data' => $data, 'roles' => $roles]);
     }
 
     function transaksiadmin(){
@@ -28,12 +29,12 @@ class DataController extends Controller
         return view('pegawai.layouts.pages.users', ['data' => $data]);
     }
 
-    public function showEditModalUser($id)
-    {
-        $item = User::findOrFail($id);
-        $roles = User::distinct()->pluck('role')->toArray();
-        return view('admin.layouts.pages.modal.edit-users')->with('item', $item)->with('roles', $roles);
-    }
+    // public function showEditModalUser($id)
+    // {
+    //     $item = User::findOrFail($id);
+    //     $roles = User::distinct()->pluck('role')->toArray();
+    //     return view('admin.layouts.pages.modal.edit-users')->with('item', $item)->with('roles', $roles);
+    // }
 
     public function editUsers(Request $request)
     {
@@ -47,6 +48,20 @@ class DataController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with('success', 'Role user berhasil diedit.');
+        return redirect()->back()->with('message', 'Role user berhasil diedit.');
+    }
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return redirect()->back()->withError('message','Data users tidak ditemukan');
+        }
+
+        $user->delete();
+
+        return redirect()->back()->with('message','Data users berhasil dihapus!');
+        // dd($id);
     }
 }

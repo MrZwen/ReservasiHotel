@@ -35,8 +35,8 @@
                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                     <th class="px-4 py-3">No</th>
                     <th class="px-4 py-3">Username</th>
-                    <th class="px-4 py-3">Password</th>
                     <th class="px-4 py-3">Email</th>
+                    <th class="px-4 py-3">Telepone</th>
                     <th class="px-4 py-3">Role</th>
                 </tr>
             </thead>
@@ -45,22 +45,19 @@
                         <tr class="text-gray-700 dark:text-gray-400">
                             <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
                             <td class="px-4 py-3">{{ $item->username }}</td>
-                            <td class="px-4 py-3">{{ $item->password }}</td>
                             <td class="px-4 py-3">{{ $item->email }}</td>
+                            <td class="px-4 py-3">{{ $item->no_hp }}</td>
                             <td class="px-4 py-3">{{$item->role}}</td>
                             <td class="px-4 py-3">
                                     </a>
                                 </div>
                             </td>
                         </tr>
-                        @include('admin.layouts.pages.modal.edit-users')
                     @endforeach
                     
             </tbody>
         </table>
     </div>
-    {{-- Modal Tambah --}}
-    @include('admin.layouts.pages.modal.tambah-users')
     <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
         <span class="flex items-center col-span-3 mx-5">
                 Showing {{ $data->firstItem() }}-{{ $data->lastItem() }} of {{ $data->total() }}
