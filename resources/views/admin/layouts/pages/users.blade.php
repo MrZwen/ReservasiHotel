@@ -24,10 +24,6 @@
         </button>
     </div>
 @endif
-{{-- <div class="flex ">
-    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="mx-2 mb-3 rounded-3 px-2 py-2 bg-purple-600 text-white hover:opacity-85"><i class="fa-solid fa-plus"></i></i></button>
-</div> --}}
-
 <div class="w-full overflow-hidden rounded-lg shadow-xs">
     <div class="w-full overflow-x-auto">
         <table class="w-full whitespace-no-wrap">
@@ -67,8 +63,6 @@
             </tbody>
         </table>
     </div>
-    {{-- Modal Tambah --}}
-    @include('admin.layouts.pages.modal.tambah-users')
     <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
         <span class="flex items-center col-span-3 mx-5">
                 Showing {{ $data->firstItem() }}-{{ $data->lastItem() }} of {{ $data->total() }}

@@ -40,10 +40,12 @@
                     <div class="text-start">
                         <h1 class="font-bold text-4xl text-7xl text-[24px] leading-tight text-center mt-4">Enjoy A Lexury Experience</h1>
                         <p class="text-center text-gray-700 text-text-[18px] opacity-50 mt-2">Indulge in Opulence: Elevate Your Lifestyle with a Luxurious Experience</p>
-                        <div class="flex flex-col flex-row justify-center gap-4 py-6">
-                            <a href="/register" class="py-3 px-8 bg-yellow-500 text-white text-center rounded-full hover:opacity-80">Get Started</a>
-                            <a href="/login" class="py-3 px-8 bg-white border border-[#C7923E] text-gray-900 font-medium text-center rounded-full hover:bg-orange-902 hover:text-white">Login</a>
-                        </div>
+                        @guest <!-- Tambahkan periksa apakah pengguna belum login -->
+                            <div class="flex flex-col flex-row justify-center gap-4 py-6">
+                                <a href="/register" class="py-3 px-8 bg-yellow-500 text-white text-center rounded-full hover:opacity-80">Get Started</a>
+                                <a href="/login" class="py-3 px-8 bg-white border border-[#C7923E] text-gray-900 font-medium text-center rounded-full hover:bg-orange-902 hover:text-white">Login</a>
+                            </div>
+                        @endguest
                         <div class="flex text-start justify-center items-center space-x-6 mt-4 mb-6">
                             <i class="fa-brands fa-whatsapp"></i>
                             <i class="fa-brands fa-instagram"></i>
