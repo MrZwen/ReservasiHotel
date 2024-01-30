@@ -30,24 +30,32 @@
         <thead>
             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                 <th class="px-4 py-3">No</th>
-                <th class="px-4 py-3">Status</th>
                 <th class="px-4 py-3">Bukti Pembayaran</th>
                 <th class="px-4 py-3">Tanggal Pembayaran</th>
                 <th class="px-4 py-3">Nominal</th>
+                <th class="px-4 py-3">Status</th>
                 <th class="px-4 py-3">Actions</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                 @foreach ($data as $item)
+                {{-- @dd($item) --}}
                     <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
-                        <td class="px-4 py-3">{{ $item->status }}</td>
                         <td class="px-4 py-3">{{ $item->bukti_pembayaran }}</td>
                         <td class="px-4 py-3">{{ $item->tgl_pembayaran }}</td>
                         <td class="px-4 py-3">{{ $item->nominal }}</td>
+                        @if ($item->status == "Belum Terverifikasi\r\n")
+                            <td class="px-4 py-3"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-700/10 uppercase">{{ str_replace('_', ' ', $item->status) }}</span></td>
+                        @endif
+                        @if ($item->status == "Terverifikasi")
+                            <td class="px-4 py-3"><span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">{{ str_replace('_', ' ', $item->status) }}</span>
+                        </td>
+                        @endif
+                        
                         <td class="px-4 py-3">
                             <div class="flex items-center justify-center space-x-4 text-sm">
-                                <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#editUser{{ $item->id }}">
+                                <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#editVerifikasi{{ $item->id_transaksi }}">
                                     <i class="fas fa-pen-to-square"></i>
                                 </button>
                                 <a href="{{url('admin/hapus-users/'.$item->id)}}" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85  rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" 
@@ -57,7 +65,7 @@
                             </div>
                         </td>
                     </tr>
-                    {{-- @include('admin.layouts.pages.modal.edit-users') --}}
+                    @include('admin.layouts.pages.modal.edit-verifikasi')
                 @endforeach
                 
         </tbody>

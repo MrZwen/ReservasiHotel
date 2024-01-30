@@ -35,11 +35,11 @@ class KamarController extends Controller
         return redirect()->back()->with('message', 'Data kamar berhasil ditambah!');
     }
 
-    public function showEditModal($id)
-    {
-        $item = Kamar::findOrFail($id);
-        return view('admin.layouts.pages.modal.edit-kamar', compact('item'));
-    }
+    // public function showEditModal($id)
+    // {
+    //     $item = Kamar::findOrFail($id);
+    //     return view('admin.layouts.pages.modal.edit-kamar', compact('item'));
+    // }
 
     public function editKamar(Request $request)
     {

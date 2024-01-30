@@ -46,7 +46,6 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // Start Kamar
     Route::get('/kamar', [KamarController::class, 'kamar']);
     Route::post('/admin/tambah-kamar', [KamarController::class, 'add']);
-    // Route::get('/admin/edit-kamar/{id}', [KamarController::class, 'showEditModal'])->name('edit-kamar');
     Route::put('admin/edit-kamar', [KamarController::class, 'editKamar'])->name('edit-kamar.submit');
     Route::get('admin/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
     // End Kamar
@@ -60,6 +59,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
 
     // Transaksi
     Route::get('/transaksi', [DataController::class, 'transaksiadmin']);
+    Route::post('/admin/verifikasi-transaksi', [DataController::class, 'verifikasi']);
 
 
     // logout

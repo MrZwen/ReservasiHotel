@@ -17,7 +17,7 @@ class DataController extends Controller
     }
 
     function transaksiadmin(){
-        $data = Transaksi::orderBy('id_transaksi', 'desc')->paginate(5);
+        $data = Transaksi::orderBy('id_transaksi', 'asc')->paginate(5);
         return view('admin.layouts.pages.transaksi', ['data' => $data]);
     }
 
@@ -36,20 +36,22 @@ class DataController extends Controller
         ]);
     }
     function simpantransaksi(Request $request){
-        // return view('layouts.formtransaksi', [
-        //     'data' => Kamar::all()
-        // ]);
         $kamar = Kamar::where('id', $request->id)->first();
         $data = [
             'id_users' => Auth::user()->id,
             'id_kamar' => $request->id,
-            'status' => 'belum_terverifikasi',
+            'status' => 'Belum Terverifikasi',
             'bukti_pembayaran' => $request->bukti_pembayaran,
             'tgl_pembayaran' => $request->tgl_pembayaran,
             'nominal' => $kamar->harga,
         ];
         Transaksi::create($data);
         return redirect('/')->with('message','');
+    }
+
+    function verifikasi(Request $request){
+        Transaksi::where('id_transaksi', $request->id_transaksi)->update(['status' => 'Terverifikasi']);
+        return redirect()->back();
     }
 
     public function editUsers(Request $request)
@@ -78,6 +80,5 @@ class DataController extends Controller
         $user->delete();
 
         return redirect()->back()->with('message','Data users berhasil dihapus!');
-        // dd($id);
     }
 }
