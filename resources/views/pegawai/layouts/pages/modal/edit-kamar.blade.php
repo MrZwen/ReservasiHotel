@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ url('admin/edit-kamar') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('pegawai/edit-kamar') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <input type="hidden" name="id" value="{{ $item->id }}">

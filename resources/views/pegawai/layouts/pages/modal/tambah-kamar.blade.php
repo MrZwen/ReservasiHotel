@@ -16,7 +16,7 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <form class="p-4 md:p-5" action="{{url('admin/tambah-kamar')}}" method="post">
+            <form class="p-4 md:p-5" action="{{url('pegawai/tambah-kamar')}}" method="post">
                 @csrf
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
