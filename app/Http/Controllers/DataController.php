@@ -15,7 +15,7 @@ class DataController extends Controller
     }
 
     function transaksiadmin(){
-        $data = Transaksi::orderBy('id', 'desc')->paginate(5);
+        $data = Transaksi::orderBy('id_transaksi', 'desc')->paginate(5);
         return view('admin.layouts.pages.transaksi', ['data' => $data]);
     }
 

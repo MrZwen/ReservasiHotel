@@ -65,10 +65,11 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // logout
     // Route::get('/logout', [AuthController::class, 'logout']);
 });
-
-Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
+    Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
     // Pegawai
     Route::get('/pegawai', [UserController::class, 'pegawai']);
+
+    
     // Start Kamar
     Route::get('pegawai-kamar', [KamarController::class, 'kamarpegawai']);
     Route::post('/pegawai/tambah-kamar', [KamarController::class, 'add']);
@@ -80,6 +81,9 @@ Route::middleware(['auth', 'checkRole:pegawai'])->group(function(){
     // Transaksi
     Route::get('/transaksi-pegawai', [DataController::class, 'transaksipegawai']);
     Route::get('/pegawai-user', [DataController::class, 'pegawaiuser']);
-    // Logout
-    // Route::get('/logout', [AuthController::class, 'logout']);
 });
+// Costumer
+Route::get('/costumer', [DataController::class, 'transaksicostumer']);
+
+ // Transaksi
+ Route::post('/transaksi', [DataController::class, 'simpantransaksi']);
