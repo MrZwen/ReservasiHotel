@@ -1,7 +1,7 @@
-@include('admin/layouts/partials/header')
+@include('pegawai/layouts/partials/header')
 
 {{-- Start Content --}}
-    @include('admin/layouts/partials.sidebar')
+    @include('pegawai/layouts/partials.sidebar')
     <div class="flex flex-col flex-1 w-full">
         <main class="h-full overflow-y-auto">
             <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800 ">
@@ -155,10 +155,10 @@
                 </div>
               </header>
             <div class="container px-6 mx-auto grid">
-                @yield('contentAdmin')
+                @yield('contentpegawai')
             </div>
         </main>
     </div>
 {{-- End Content --}}
 
-@include('admin/layouts/partials/footer')
+@include('pegawai/layouts/partials/footer')

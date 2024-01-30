@@ -77,7 +77,7 @@
                         </h1>
                         <p class="text-left text-[18px] text-gray-700 text-lg md:text-[18px] opacity-50 mt-2">
                             Each room at this hotel is decorated in detail and equipped with the finest modern amenities. The rooms are usually equipped with comfortable beds with high-quality linens, luxurious bath facilities, state-of-the-art technological equipment, and private balconies offering spectacular views.
-                        </p>
+                        </p> 
                         <p class="text-left text-gray-700 text-lg md:text-[18px] opacity-50 mt-2">
                             Overall, this hotel is a very special place to stay and promises an unforgettable stay, decorated with luxury, the best service, and facilities that pamper guests.
                         </p>
