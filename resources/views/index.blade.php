@@ -140,7 +140,7 @@
                         </a>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">The Deluxe room at the hotel is a luxurious space that offers extra comfort. Designed with elegant furniture, comfortable beds, and modern amenities like Wi-Fi and flat-screen televisions.</p>
                         <a href="/costumer" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
+                            Booking now!
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                             </svg>
@@ -157,7 +157,7 @@
                         </a>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Standard type rooms in hotels are comfortable and functional accommodation spaces. Designed simply but efficiently, this room provides a comfortable bed, basic facilities.</p>
                         <a href="/costumer" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
+                        Booking now!
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                             </svg>
@@ -174,7 +174,7 @@
                         </a>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Premium type rooms in hotels are rooms that combine high comfort with a touch of luxury. With its elegant design, quality furniture and additional facilities, this room creates a special atmosphere for guests.</p>
                         <a href="/costumer" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
+                        Booking now!
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                             </svg>
@@ -191,7 +191,7 @@
                         </a>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Escape into an enchanting world of intimacy and luxury with our Special Room Couple package. Designed for those seeking a romantic retreat, this carefully curated experience promises an unforgettable escape.</p>
                         <a href="/costumer" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Read more
+                        Booking now!
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                             </svg>

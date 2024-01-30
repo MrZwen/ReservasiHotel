@@ -57,6 +57,8 @@ Route::middleware(['auth'])->group(function(){
     // Transaksi
     Route::get('/transaksi', [DataController::class, 'transaksiadmin']);
 
+    // Transaksi
+    Route::post('/transaksi', [DataController::class, 'simpantransaksi']);
 
     // logout
     Route::get('/logout', [AuthController::class, 'logout']);

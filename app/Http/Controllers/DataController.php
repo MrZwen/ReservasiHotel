@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kamar;
 use App\Models\Transaksi;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DataController extends Controller
 {
@@ -29,9 +31,26 @@ class DataController extends Controller
         return view('pegawai.layouts.pages.users', ['data' => $data]);
     }
     function transaksicostumer(){
-        return view('layouts.formtransaksi');
+        return view('layouts.formtransaksi', [
+            'data' => Kamar::all()
+        ]);
     }
-
+    function simpantransaksi(Request $request){
+        // return view('layouts.formtransaksi', [
+        //     'data' => Kamar::all()
+        // ]);
+        $kamar = Kamar::where('id', $request->id)->first();
+        $data = [
+            'id_users' => Auth::user()->id,
+            'id_kamar' => $request->id,
+            'status' => 'belum_terverifikasi',
+            'bukti_pembayaran' => $request->bukti_pembayaran,
+            'tgl_pembayaran' => $request->tgl_pembayaran,
+            'nominal' => $kamar->harga,
+        ];
+        Transaksi::create($data);
+        return redirect('/')->with('message','');
+    }
 
     // public function showEditModalUser($id)
     // {
