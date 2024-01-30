@@ -46,7 +46,6 @@ class AuthController extends Controller
         ]);
     
         if (Auth::attempt($credentials)) {
-            // Check user role
             $user = Auth::user();
     
             if ($user->role == 'admin') {

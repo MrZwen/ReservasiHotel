@@ -2,7 +2,7 @@
 
 @section('contentAdmin')
     <div class="">
-        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">Users
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">Data Users
             <hr class="h-px rounded bg-gray-200 border-0 dark:bg-gray-700">
         </h2>
     </div>
@@ -24,9 +24,9 @@
         </button>
     </div>
 @endif
-<div class="flex ">
+{{-- <div class="flex ">
     <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="mx-2 mb-3 rounded-3 px-2 py-2 bg-purple-600 text-white hover:opacity-85"><i class="fa-solid fa-plus"></i></i></button>
-</div>
+</div> --}}
 
 <div class="w-full overflow-hidden rounded-lg shadow-xs">
     <div class="w-full overflow-x-auto">
@@ -35,8 +35,8 @@
                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                     <th class="px-4 py-3">No</th>
                     <th class="px-4 py-3">Username</th>
-                    <th class="px-4 py-3">Password</th>
                     <th class="px-4 py-3">Email</th>
+                    <th class="px-4 py-3">no_hp</th>
                     <th class="px-4 py-3">Role</th>
                     <th class="px-4 py-3">Actions</th>
                 </tr>
@@ -46,15 +46,19 @@
                         <tr class="text-gray-700 dark:text-gray-400">
                             <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
                             <td class="px-4 py-3">{{ $item->username }}</td>
-                            <td class="px-4 py-3">{{ $item->password }}</td>
                             <td class="px-4 py-3">{{ $item->email }}</td>
+                            <td class="px-4 py-3">{{ $item->no_hp }}</td>
                             <td class="px-4 py-3">{{$item->role}}</td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center justify-center space-x-4 text-sm">
                                     <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#editModal{{ $item->id_user }}">
                                         <i class="fas fa-pen-to-square"></i>
                                     </button>
-                                    <a href="{{url('admin/hapus-kamar/'.$item->id_user)}}" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85  rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" 
+                                    <button data-modal-target="#infoModal{{ $item->id_user }}" data-modal-toggle="#infoModal{{ $item->id_user }}" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit"><i class="fa-solid fa-info"></i></button>
+                                    {{-- <button type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray btnEdit" data-toggle="modal" data-target="#infoModal{{ $item->id_user }}">
+                                        <i class="fa-solid fa-info"></i>
+                                    </button> --}}
+                                    <a href="{{url('admin/hapus-users/'.$item->id_user)}}" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 hover:opacity-85  rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" 
                                     aria-label="Delete">
                                     <i class="fa-solid fa-trash-can"></i>   
                                     </a>
