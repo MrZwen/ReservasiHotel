@@ -32,7 +32,7 @@
         </div>
     </nav>
 
-    
+    @if(Auth::user())
     <div class="w-full overflow-x-auto">
         <table class="w-full whitespace-no-wrap">
             <thead>
@@ -63,7 +63,9 @@
                     
             </tbody>
         </table>
-    </div>
+    </div> 
+    @endif
+    
 
     <!-- Hero Section -->
     <section class="">
