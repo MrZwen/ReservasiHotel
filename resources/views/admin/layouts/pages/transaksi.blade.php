@@ -45,7 +45,7 @@
                         <td class="px-4 py-3">{{ $item->bukti_pembayaran }}</td>
                         <td class="px-4 py-3">{{ $item->tgl_pembayaran }}</td>
                         <td class="px-4 py-3">{{ $item->nominal }}</td>
-                        @if ($item->status == "Belum Terverifikasi\r\n")
+                        @if ($item->status == "Belum Terverifikasi")
                             <td class="px-4 py-3"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-700/10 uppercase">{{ str_replace('_', ' ', $item->status) }}</span></td>
                         @endif
                         @if ($item->status == "Terverifikasi")
