@@ -46,7 +46,7 @@ class DataController extends Controller
             'nominal' => $kamar->harga,
         ];
         Transaksi::create($data);
-        return redirect('/')->with('message','');
+        return redirect('/dashboard-user')->with('message','');
     }
 
     function verifikasi(Request $request){

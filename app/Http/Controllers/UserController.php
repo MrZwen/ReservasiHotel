@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Kamar;
 use App\Models\User;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -27,6 +29,18 @@ class UserController extends Controller
 
     function dashboard(){
         return view('user.dashboard');
+    }
+
+    function dashboardUser(){
+        $user = Auth::user();
+        $data = Transaksi::where('id_users', Auth::user()->id)->get();
+        return view('user.pages.profile', ['data'=> $data, 'user' => $user]);
+    }
+
+    function dashboardBook(){
+        $user = Auth::user();
+        $data = Transaksi::where('id_users', Auth::user()->id)->get();
+        return view('user.pages.history', ['data'=> $data, 'user' => $user]);
     }
 
 
