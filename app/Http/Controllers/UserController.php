@@ -24,4 +24,10 @@ class UserController extends Controller
     function profile(){
         return view('admin.layouts.pages.profile');
     }
+
+    function dashboard(){
+        return view('user.dashboard');
+    }
+
+
 }
