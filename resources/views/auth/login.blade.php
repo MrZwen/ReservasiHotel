@@ -27,18 +27,17 @@
                 @endif
                 <div class="mb-3">
                     <label for="username" class="font-bold block">Username</label>
-                    <input
-                        class="rounded font-semibold border border-solid border-slate-100 shadow-lg block py-2 w-full "
+                    <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block py-2 w-full "
                         type="text" value="{{ old('username') }}" name="username" autocomplete="off"
                         placeholder="Username" />
                 </div>
                 <div class="mb-4">
                     <label for="password" class="font-bold block">Password</label>
-                    <input
-                        class="rounded font-semibold border border-solid border-slate-100 shadow-lg block py-2 w-full"
+                    <input class="rounded font-semibold border border-solid border-slate-100 shadow-lg block py-2 w-full"
                         type="password" name="password" autocomplete="off" placeholder="Password" />
                 </div>
-                <button class="bg-blue-700 text-white px-4 py-1 rounded hover:bg-blue-600 w-full mb-2" type="submit">Login</button>
+                <button class="bg-blue-700 text-white px-4 py-1 rounded hover:bg-blue-600 w-full mb-2"
+                    type="submit">Login</button>
                 <p>Belum Punya Akun? <a href="/register" class="text-blue-700 font-bold">Signup here</a></p>
             </div>
         </div>

@@ -38,7 +38,7 @@
                         All</button>
                 </div>
             </div>
-            <div class="lg:flex items-center justify-center text-center gap-x-8 mt-8">
+            <div class="grid grid-cols-4 text-center gap-x-8 mt-8">
                 <div
                     class="max-w-[350px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">

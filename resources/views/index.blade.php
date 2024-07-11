@@ -84,7 +84,7 @@
                         All</button>
                 </div>
             </div>
-            <div class="lg:flex items-center justify-center text-center gap-x-8 mt-8">
+            <div class="grid grid-cols-4 text-center gap-x-8 mt-8">
                 <div
                     class="max-w-[350px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
@@ -186,7 +186,7 @@
     </section>
 
     <!-- Step Book -->
-    <section class="bg-[#27343F] py-12">
+    <section class="bg-[#27343F] py-12 mt-28">
         <div class="container mx-auto justify-center items-center text-center">
             <div class="p-3 rounded-lg md:p-8 ">
                 <h1 class="font-bold text-4xl leading-tight text-white mb-2">How to Book</h1>

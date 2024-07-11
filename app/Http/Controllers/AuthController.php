@@ -47,15 +47,17 @@ class AuthController extends Controller
     
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
+
+            session()->flash('success', 'Anda berhasil Login '.$user->username);
     
             if ($user->role == 'admin') {
                 return redirect()->intended('/admin');
             } elseif ($user->role == 'pegawai') {
                 return redirect()->intended('/pegawai');
             } elseif($user->role == 'costumer'){
-                return redirect()->intended('/');
+                return redirect()->route('dashboard-user');
             }
         }
-        return redirect('login')->withErrors('Username Atau Password Yang Dimasukkan Tidak Sesuai!');
+        return redirect('login')->withErrors('Username Atau Password Yang Dimasukkan Tidak Sesuai!')->with('error', 'Terjadi kesalahan saat anda login');
     }
 }

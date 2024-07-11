@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 text-white mt-8">
+<footer class="bg-gray-800 text-white mt-24">
     <!-- Contact Section -->
     <div class="text-center p-8">
         <h1 class="text-2xl font-semibold font-serif leading-8 mb-2">If you have any question, Let us help you!
