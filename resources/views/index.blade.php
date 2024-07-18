@@ -6,51 +6,12 @@
     <!-- Navbar -->
     @include('layouts.navbar')
 
-    @if (Auth::user())
-        <div class="w-full overflow-x-auto">
-            <table class="w-full whitespace-no-wrap">
-                <thead>
-                    <tr
-                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
-                        <th class="px-4 py-3">Bukti Pembayaran</th>
-                        <th class="px-4 py-3">Tanggal Pembayaran</th>
-                        <th class="px-4 py-3">Nominal</th>
-                        <th class="px-4 py-3">Status</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                    @foreach ($data as $item)
-                        {{-- @dd($item) --}}
-                        <tr class="text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-3 justify-center flex"><img width="150px"
-                                    src="img/{{ $item->bukti_pembayaran }}" alt=""></td>
-                            <td class="px-4 py-3">{{ $item->tgl_pembayaran }}</td>
-                            <td class="px-4 py-3">{{ $item->nominal }}</td>
-                            @if ($item->status == 'Belum Terverifikasi')
-                                <td class="px-4 py-3"><span
-                                        class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-700/10 uppercase">{{ str_replace('_', ' ', $item->status) }}</span>
-                                </td>
-                            @endif
-                            @if ($item->status == 'Terverifikasi')
-                                <td class="px-4 py-3"><span
-                                        class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">{{ str_replace('_', ' ', $item->status) }}</span>
-                                </td>
-                            @endif
-                        </tr>
-                        @include('admin.layouts.pages.modal.edit-verifikasi')
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    @endif
-
-
     <!-- Hero Section -->
     <section class="">
-        <div class="container mx-auto px-4 py-32 mt-6">
-            <div class="flex justify-center items-center">
-                <div>
-                    <h1 class="font-bold text-6xl leading-tight mt-4">Enjoy A Lexury Experience</h1>
+        <div class="container mx-auto px-4 mt-20 lg:mt-32">
+            <div class="flex flex-col lg:flex lg:flex-row justify-center items-center">
+                <div class="mb-4">
+                    <h1 class="font-bold text-4xl lg:text-6xl leading-tight mt-4">Enjoy A Lexury Experience</h1>
                     <p class="text-gray-700 text-text-[20px] opacity-50 mt-2">Experience the epitome of elegance with
                         personalized services and exquisite surroundings.</p>
                     <div>
@@ -72,8 +33,8 @@
 
     <!-- Product Section -->
     <section>
-        <div class="container mx-auto lg:h-screen mt-12">
-            <div class="flex justify-between mt-4 pt-8">
+        <div class="container mx-auto mt-14 lg:mt-28">
+            <div class="flex justify-between items-center">
                 <div>
                     <h1 class="font-bold text-3xl mb-2">Our Room & Suites</h1>
                     <p class="text-sm">Choose a hotel in your category</p>
@@ -84,7 +45,7 @@
                         All</button>
                 </div>
             </div>
-            <div class="grid grid-cols-4 text-center gap-x-8 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-center text-center gap-8 px-14 mt-8">
                 <div
                     class="max-w-[350px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
@@ -175,8 +136,8 @@
                             Booking now!
                             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
                             </svg>
                         </a>
                     </div>
@@ -186,7 +147,7 @@
     </section>
 
     <!-- Step Book -->
-    <section class="bg-[#27343F] py-12 mt-28">
+    <section class="bg-[#27343F] py-12 mt-24">
         <div class="container mx-auto justify-center items-center text-center">
             <div class="p-3 rounded-lg md:p-8 ">
                 <h1 class="font-bold text-4xl leading-tight text-white mb-2">How to Book</h1>
@@ -197,14 +158,14 @@
                         <dt class="mb-2 text-3xl text-white font-extrabold"><i class="fa-solid fa-lock"
                                 style="color: #ffffff;"></i></dt>
                         <dd class="text-2xl text-white dark:text-gray-400 mb-2">Verification Account</dd>
-                        <p class="text-white">Melakukan login, apabila belum punya akun anda dapat registrasi terlebih
+                        <p class="text-white mb-3">Melakukan login, apabila belum punya akun anda dapat registrasi terlebih
                             dahulu</p>
                     </div>
                     <div class="flex flex-col mb-2 items-center">
                         <dt class="mb-2 text-3xl font-extrabold text-white"><i class="fa-regular fa-folder"
                                 style="color: #ffffff;"></i></dt>
                         <dd class="text-2xl text-white dark:text-gray-400 mb-2">Fill Data Book</dd>
-                        <p class="text-white">Melakukan pemilihan kamar dengan mengisi form booking</p>
+                        <p class="text-white mb-3">Melakukan pemilihan kamar dengan mengisi form booking</p>
                     </div>
                     <div class="flex flex-col items-center">
                         <dt class="mb-2 text-3xl font-extrabold text-white"><i class="fa-solid fa-money-bill"
@@ -219,39 +180,40 @@
 
     <!-- About -->
     <section>
-        <div class="container mx-auto px-8 mt-36">
-            <div class="flex justify-center items-center gap-x-14">
-                <img src="img/about-img.png" class="rounded-sm" alt="">
-                <div>
+        <div class="px-6 mt-12 md:mt-36">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-14">
+                <img src="img/about-img.png" class="rounded-sm w-full lg:w-auto lg:max-w-md" alt="">
+                <div class="max-w-lg lg:w-[473px]">
                     <h1
-                        class="font-bold text-4xl leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
+                        class="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight mt-4 mb-3 text-slate-900 font-['Lora'] tracking-tight">
                         Ordinary Best Western 5 Stars Hotel Since 1998
                     </h1>
-                    <p class="text-left text-[18px] text-lg md:text-[18px] mt-2">
-                        Each room at this hotel is decorated in detail and equipped with the finest modern amenities.
-                        The rooms are usually equipped with comfortable beds with high-quality linens, luxurious bath
+                    <p class="text-left text-base md:text-lg lg:text-[18px] mt-2">
+                        Each room at this hotel is decorated in detail and equipped with the finest modern amenities. The
+                        rooms are usually equipped with comfortable beds with high-quality linens, luxurious bath
                         facilities, state-of-the-art technological equipment, and private balconies offering spectacular
                         views.
                     </p>
-                    <p class="text-left text-lg md:text-[18px] mt-2">
-                        Overall, this hotel is a very special place to stay and promises an unforgettable stay,
-                        decorated with luxury, the best service, and facilities that pamper guests.
+                    <p class="text-left text-base md:text-lg lg:text-[18px] mt-2">
+                        Overall, this hotel is a very special place to stay and promises an unforgettable stay, decorated
+                        with luxury, the best service, and facilities that pamper guests.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- About 2 -->
     <section>
-        <div class="container mx-auto px-8 py-32 pt-8">
-            <div class="flex justify-center items-center gap-x-12 pt-24">
-                <div class="w-1/2">
+        <div class="px-6 mt-12 md:mt-36">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-14">
+                <div class="max-w-lg lg:w-[473px]">
                     <h1
-                        class="font-bold text-4xl leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
+                        class="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight mt-4 mb-3 text-slate-900 font-['Lora'] tracking-tight">
                         Ocenia Waterpool
                     </h1>
-                    <p class="text-left text-[18px] text-lg md:text-[18px] mt-2">
+                    <p class="text-left text-base md:text-lg lg:text-[18px] mt-2">
                         Ocenia Waterpool adalah sebuah kolam renang yang menakjubkan yang tersembunyi di tengah hutan,
                         menawarkan pengalaman renang yang mempesona di bawah naungan pepohonan hijau yang lebat. Dengan
                         air yang jernih dan sejuk, kolam renang ini memberikan kesan menyatu dengan alam sekitar.
@@ -260,21 +222,19 @@
                         dalam hutan yang asri.
                     </p>
                 </div>
-                <div class="lg:mr-12 order-2">
-                    <img src="img/about4.png" class="rounded-sm" alt="">
-                </div>
+                <img src="img/about4.png" class="rounded-sm w-full lg:w-auto lg:max-w-md" alt="">
             </div>
         </div>
     </section>
 
     <!-- About 3 -->
     <section>
-        <div class="container mx-auto px-8 py-32 pt-8">
-            <div class="flex justify-center items-center gap-x-12">
-                <img src="img/about3.png" class="rounded-sm" alt="">
-                <div class="basis-[55%] md:text-start text-start">
+        <div class="px-6 mt-12 md:mt-36">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-14">
+                <img src="img/about3.png" class="rounded-sm w-full lg:w-auto lg:max-w-md" alt="">
+                <div class="max-w-lg lg:w-[473px]">
                     <h1
-                        class="font-bold text-4xl leading-tight mt-4 mb-3 w-[473px] text-slate-900 font-['Lora'] tracking-tight">
+                        class="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight mt-4 mb-3 text-slate-900 font-['Lora'] tracking-tight">
                         Jazucci Private Spa
                     </h1>
                     <p class="text-left text-[18px] text-lg md:text-[18px] mt-2">

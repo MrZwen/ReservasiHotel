@@ -46,6 +46,8 @@ Route::get('/', function () {
 
 //  dashboard
 Route::get('/dashboard-user', [UserController::class, 'dashboard'])->name('dashboard-user');
+Route::get('/dashboard-user/profile', [UserController::class, 'dashboardUser'])->name('profile-user');
+Route::get('/dashboard-user/book', [UserController::class, 'dashboardBook'])->name('booking');
 
 Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // Admin
