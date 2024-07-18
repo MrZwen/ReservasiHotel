@@ -1,6 +1,6 @@
 @extends('layouts/main')
 
-@section('title', 'Landing Page')
+@section('title', 'Transaksi Hotel')
 
 @section('content')
     <!-- Navbar -->
