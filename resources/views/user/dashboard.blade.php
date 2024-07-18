@@ -20,14 +20,14 @@
     <section style="background-image: url('{{ asset('img/hero.jpg') }}')">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-            <h1 class="text-white text-5xl font-bold">Welcome to Our Website</h1>
+            <h1 class="text-white text-5xl font-bold">Welcome to Our Reservation Hotel</h1>
         </div>
     </section>
 
     <!-- Product Section -->
     <section>
-        <div class="container mx-auto lg:h-screen mt-32">
-            <div class="flex justify-between mt-4 pt-8">
+        <div class="container mx-auto lg:mt-16">
+            <div class="flex justify-between">
                 <div>
                     <h1 class="font-bold text-3xl mb-2">Our Room & Suites</h1>
                     <p class="text-sm">Choose a hotel in your category</p>
