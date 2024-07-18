@@ -20,7 +20,7 @@
     <section style="background-image: url('{{ asset('img/hero.jpg') }}')">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-            <h1 class="text-white text-5xl font-bold">Welcome to Our Website</h1>
+            <h1 class="text-white text-5xl font-bold">Welcome to Our Reservation Hotel</h1>
         </div>
     </section>
 
