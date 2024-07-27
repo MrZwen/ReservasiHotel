@@ -30,10 +30,15 @@ class DataController extends Controller
         $data = User::orderBy('id', 'desc')->paginate(5);
         return view('pegawai.layouts.pages.users', ['data' => $data]);
     }
-    function transaksicostumer(){
-        return view('layouts.formtransaksi', [
-            'data' => Kamar::all()
-        ]);
+    function transaksicostumer(Request $request){
+    $kamarId = $request->query('id');
+
+    $data = Kamar::find($kamarId);
+
+    if (!$data) {
+        abort(404); 
+    }
+    return view('user.layouts.formtransaksi', ['data' => $data]);
     }
     function simpantransaksi(Request $request){
         $kamar = Kamar::where('id', $request->id)->first();

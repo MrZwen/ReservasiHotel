@@ -6,6 +6,11 @@
             <div class="flex-1">
                 <ul class="space-y-3">
                     <li>
+                        <a class="no-underline text-white flex items-center" href="{{ route('dashboard-user') }}">
+                            <i class="fa-solid fa-home mr-3"></i> Dashboard
+                        </a>
+                    </li>
+                    <li>
                         <a class="no-underline text-white flex items-center" href="{{ route('profile-user') }}">
                             <i class="fa-solid fa-user mr-3"></i> Profile
                         </a>

@@ -28,7 +28,8 @@ class UserController extends Controller
     }
 
     function dashboard(){
-        return view('user.dashboard');
+        $data = Kamar::all();
+        return view('user.dashboard', ['data' => $data]);
     }
 
     function dashboardUser(){

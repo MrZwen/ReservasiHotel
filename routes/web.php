@@ -57,7 +57,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     Route::get('/setting', [UserController::class, 'settings']);
     // Start Kamar
     Route::get('/kamar', [KamarController::class, 'kamar']);
-    Route::post('/admin/tambah-kamar', [KamarController::class, 'add']);
+    Route::post('/admin/tambah-kamar', [KamarController::class, 'add'])->name('add-kamar-admin');
     Route::put('admin/edit-kamar', [KamarController::class, 'editKamar'])->name('edit-kamar.submit');
     Route::get('admin/hapus-kamar/{id}', [KamarController::class, 'delete'])->name('hapus-kamar');
     // End Kamar

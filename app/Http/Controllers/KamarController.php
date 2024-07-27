@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kamar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 
 class KamarController extends Controller
@@ -17,23 +18,39 @@ class KamarController extends Controller
         return view('pegawai.layouts.pages.kamar', ['data' => $data]);
     }
 
-    function add(Request $request){
-        $data = $request->validate([
-            'tipe_kamar' => 'required',
-            'no_kamar' => 'required',
-            'harga' => 'required',
-        ]);
+    function kamarUser(){
+        $data = Kamar::all();
+        return view('user.dashboard', ['data' => $data]);
+    }
 
-        $kamar = new Kamar([
-            'tipe_kamar' => $data['tipe_kamar'],
-            'no_kamar' => $data['no_kamar'],
-            'harga' => $data['harga'],
-        ]);
+    public function add(Request $request)
+{
+    $data = $request->validate([
+        'tipe_kamar' => 'required|string|max:255',
+        'no_kamar' => 'required|integer|unique:kamar,no_kamar',
+        'deskprisi' => 'required|string',  // Periksa penamaan yang benar
+        'status' => 'required|string',
+        'harga' => 'required|numeric',
+    ]);
 
-        $kamar->save();
+    Log::info('Data yang divalidasi:', $data);
 
+    $kamar = new Kamar([
+        'no_kamar' => $data['no_kamar'],
+        'tipe_kamar' => $data['tipe_kamar'],
+        'deskripsi' => $data['deskprisi'],  // Periksa penamaan yang benar
+        'status' => $data['status'],
+        'harga' => $data['harga'],
+    ]);
+    $saved = $kamar->save();
+
+    if (!$saved) {
+        return redirect()->back()->withError('message', 'Data kamar gagal ditambah!');
+    } else {
         return redirect()->back()->with('message', 'Data kamar berhasil ditambah!');
     }
+
+}
 
     // public function showEditModal($id)
     // {
@@ -43,23 +60,38 @@ class KamarController extends Controller
 
     public function editKamar(Request $request)
     {
+        // Validasi input
         $this->validate($request, [
             'id' => 'required|exists:kamar,id',
             'tipe_kamar' => 'required|string',
             'no_kamar' => 'required|string',
+            'deskripsi' => 'required|string',
+            'status' => 'nullable|string',
             'harga' => 'required|numeric',
         ]);
 
-        $kamar = Kamar::findOrFail($request->id);
-        $kamar->update([
-            'tipe_kamar' => $request->tipe_kamar,
-            'no_kamar' => $request->no_kamar,
-            'harga' => $request->harga,
-        ]);
+        // Temukan data kamar berdasarkan ID
+        $kamar = Kamar::find($request->id);
 
-        return redirect()->back()->with('message', 'Data kamar berhasil diupdate.');
+        if ($kamar) {
+            // Update data kamar
+            $kamar->tipe_kamar = $request->tipe_kamar;
+            $kamar->no_kamar = $request->no_kamar;
+            $kamar->deskripsi = $request->deskripsi;
+            $kamar->status = $request->has('status') ? $request->status : $kamar->status;
+            $kamar->harga = $request->harga;
+
+            // Simpan pembaruan dan periksa apakah pembaruan berhasil
+            if ($kamar->save()) {
+                return redirect()->back()->with('message', 'Data kamar berhasil diupdate.');
+            } else {
+                return redirect()->back()->withErrors('message', 'Gagal memperbarui data kamar.');
+            }
+        } else {
+            // Kamar tidak ditemukan
+            return redirect()->back()->withErrors('message', 'Data kamar tidak ditemukan.');
+        }
     }
-
     public function delete($id)
     {
         $kamar = Kamar::find($id);
