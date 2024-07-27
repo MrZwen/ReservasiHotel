@@ -38,7 +38,7 @@
                         All</button>
                 </div>
             </div>
-            <div class="grid grid-cols-4 text-center gap-x-8 mt-8">
+            <div class="flex flex-col justify-center items-center lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 text-center gap-x-8 mt-8">
             @foreach ($data as $kamar)
                 <div class="max-w-[350px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
