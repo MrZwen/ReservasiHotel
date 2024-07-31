@@ -30,7 +30,7 @@ class DataController extends Controller
         $data = User::orderBy('id', 'desc')->paginate(5);
         return view('pegawai.layouts.pages.users', ['data' => $data]);
     }
-    function transaksicostumer(Request $request){
+    function kamarAll(Request $request){
     $kamarId = $request->query('id');
 
     $data = Kamar::find($kamarId);

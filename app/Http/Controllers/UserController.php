@@ -44,5 +44,9 @@ class UserController extends Controller
         return view('user.pages.history', ['data'=> $data, 'user' => $user]);
     }
 
+    function booking(){
+        $data = Kamar::all();
+        return view('user.layouts.booking', ['data' => $data]);
+    }
 
 }

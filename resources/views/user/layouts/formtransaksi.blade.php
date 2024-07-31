@@ -28,13 +28,30 @@
                 <h5 class="text-sm mt-2 ">Room <span class="first-letter-capital">{{$data->status}}</span></h5>
                 <p class="max-w-7xl mt-3">{{$data->deskripsi}}</p>
                 <p class="mt-6">Harga Rp. {{ number_format($data->harga, 0, ',', '.') }}/malam</p>
-                <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+                @if(!Auth::user())
+                <div class="relative group">
+                    <button
+                    class="block text-white bg-yellow-500 hover:bg-yellow-700 font-medium rounded-lg text-sm px-8 py-2 text-center mt-4 cursor-not-allowed opacity-50"
+                    type="button">
+                    Book Now
+                    </button>
+                    <div class="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 hidden group-hover:block">
+                        <div class="bg-black text-white text-xs rounded py-1 px-2">
+                            Anda harus login terlebih dahulu
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-black rotate-45 bottom-[-6px]"></div>
+                    </div>
+                </div>
+                @else 
+                    <a href="/booking-kamar"
                     class="block text-white bg-yellow-500 hover:bg-yellow-700 font-medium rounded-lg text-sm px-8 py-2 text-center mt-4"
                     type="button">
                     Book Now
-                </button>
+                    </a>
+                @endif
+                
                 <!-- Main modal -->
-                <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+                {{-- <div id="authentication-modal" tabindex="-1" aria-hidden="true"
                     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                     <div class="relative p-4 w-full max-w-md max-h-full">
                         <!-- Modal content -->
@@ -101,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

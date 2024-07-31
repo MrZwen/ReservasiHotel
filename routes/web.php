@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\UserController;
+use App\Models\Kamar;
 use App\Models\User;
 use App\Models\Transaksi;
 use Illuminate\Support\Facades\Auth;
@@ -36,18 +37,17 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::get('/', function () {
-    if(Auth::user()){
-        $data = Transaksi::where('id_users', Auth::user()->id)->get();
+        $data = Kamar::all();
         return view('index', ['data'=> $data]);
-    } else {
-        return view('index');
-    }
 });
 
-//  dashboard
-Route::get('/dashboard-user', [UserController::class, 'dashboard'])->name('dashboard-user');
-Route::get('/dashboard-user/profile', [UserController::class, 'dashboardUser'])->name('profile-user');
-Route::get('/dashboard-user/book', [UserController::class, 'dashboardBook'])->name('booking');
+Route::middleware(['auth', 'checkRole:costumer'])->group(function(){
+    //  dashboard
+    Route::get('/dashboard-user', [UserController::class, 'dashboard'])->name('dashboard-user');
+    Route::get('/dashboard-user/profile', [UserController::class, 'dashboardUser'])->name('profile-user');
+    Route::get('/dashboard-user/book', [UserController::class, 'dashboardBook'])->name('booking');
+    Route::get('/booking-kamar', [UserController::class, 'booking']);
+});
 
 Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // Admin
@@ -99,7 +99,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     
 });
 // Costumer
-Route::get('/costumer', [DataController::class, 'transaksicostumer']);
+Route::get('/kamar-user', [DataController::class, 'kamarAll']);
 
  // Transaksi
  Route::post('/transaksi', [DataController::class, 'simpantransaksi']);
