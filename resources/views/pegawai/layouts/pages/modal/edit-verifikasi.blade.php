@@ -9,14 +9,25 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ url('pegawai/verifikasi-transaksi') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                @if ($item->status != 'Terverifikasi' && $item->status != 'Selesai')
+                    <form action="{{ url('pegawai/verifikasi-transaksi') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="id_transaksi" value="{{ $item->id_transaksi }}">
+                        <div class="modal-footer">
+                            <button type="submit" class="text-white bg-purple-600 hover:opacity-80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Verifikasi</button>
+                        </div>
+                    </form>
+                @endif
 
-                    <input type="hidden" name="id_transaksi" value="{{ $item->id_transaksi }}">
-                    <div class="modal-footer">
-                        <button type="submit" class="text-white bg-purple-600 hover:opacity-80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Verifikasi</button>
-                    </div>
-                </form>
+                @if ($item->status == 'Terverifikasi')
+                    <form action="{{ url('pegawai/selesai-transaksi') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="id_transaksi" value="{{ $item->id_transaksi }}">
+                        <div class="modal-footer">
+                            <button type="submit" class="text-white bg-green-600 hover:opacity-80 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Selesai</button>
+                        </div>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id_transaksi';
     protected $table = 'transaksi';
     protected $fillable = [
         'id_users',
@@ -17,6 +18,8 @@ class Transaksi extends Model
         'tgl_pembayaran',
         'nominal',
         'updated_at',
-        'created_at'
+        'created_at',
+        'tgl_checkin',
+        'tgl_checkout'
       ]; 
 }

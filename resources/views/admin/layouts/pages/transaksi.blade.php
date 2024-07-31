@@ -28,10 +28,12 @@
 <div class="w-full overflow-x-auto">
     <table class="w-full whitespace-no-wrap">
         <thead>
-            <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
+            <tr class="text-xs font-semibold tracking-wide text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                 <th class="px-4 py-3">No</th>
                 <th class="px-4 py-3">Bukti Pembayaran</th>
                 <th class="px-4 py-3">Tanggal Pembayaran</th>
+                <th class="px-4 py-3">Tanggal Checkin</th>
+                <th class="px-4 py-3">Tanggal Checkout</th>
                 <th class="px-4 py-3">Nominal</th>
                 <th class="px-4 py-3">Status</th>
                 <th class="px-4 py-3">Actions</th>
@@ -42,13 +44,16 @@
                 {{-- @dd($item) --}}
                     <tr class="text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
-                        <td class="px-4 py-3 justify-center flex"><img width="150px" src="img/{{$item->bukti_pembayaran}}" alt=""></td>
+                        <td class="px-4 py-3 justify-center flex"><img width="150px"
+                            src="{{ asset('storage/' . $item->bukti_pembayaran) }}" alt=""></td>
                         <td class="px-4 py-3">{{ $item->tgl_pembayaran }}</td>
-                        <td class="px-4 py-3">{{ $item->nominal }}</td>
+                        <td class="px-4 py-3">{{ $item->tgl_checkin }}</td>
+                        <td class="px-4 py-3">{{ $item->tgl_checkout }}</td>
+                        <td class="px-4 py-3">Rp.{{ number_format($item->nominal, 0, ',', '.') }}</td>
                         @if ($item->status == "Belum Terverifikasi")
                             <td class="px-4 py-3"><span class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-pink-700/10 uppercase">{{ str_replace('_', ' ', $item->status) }}</span></td>
                         @endif
-                        @if ($item->status == "Terverifikasi")
+                        @if ($item->status == "Terverifikasi" || $item->status == "Selesai")
                             <td class="px-4 py-3"><span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">{{ str_replace('_', ' ', $item->status) }}</span>
                         </td>
                         @endif

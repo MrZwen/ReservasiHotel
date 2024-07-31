@@ -23,6 +23,14 @@
                         <label for="tipe_kamar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipe Kamar</label>
                         <input type="text" name="tipe_kamar" id="tipe_kamar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Masukkan Tipe Kamar " required="" value="{{old('tipe_kamar')}}">
                     </div>
+                    <div class="col-span-2">
+                        <label for="deskprisi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi Kamar</label>
+                        <input type="text" name="deskprisi" id="deskprisi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Masukkan Tipe Kamar " required="" value="{{old('deskprisi')}}">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
+                        <input type="text" name="status" id="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Masukkan Tipe Kamar " required="" value="{{old('status')}}">
+                    </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="no_kamar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No Kamar</label>
                         <input type="number" name="no_kamar" id="no_kamar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Masukkan No Kamar " required="" value="{{old('no_kamar')}}">

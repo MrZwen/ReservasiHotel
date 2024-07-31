@@ -40,27 +40,108 @@ class DataController extends Controller
     }
     return view('user.layouts.formtransaksi', ['data' => $data]);
     }
-    function simpantransaksi(Request $request){
+    public function simpantransaksi(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'bukti_pembayaran' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'tgl_checkin' => 'required|date',
+            'tgl_checkout' => 'required|date',
+            'nominal' => 'required|numeric',
+        ]);
+
+        // Periksa apakah pengguna sudah memiliki transaksi yang belum selesai
+        $existingTransaction = Transaksi::where('id_users', Auth::user()->id)
+                                        ->whereIn('status', ['Belum Terverifikasi', 'Terverifikasi'])
+                                        ->first();
+
+        if ($existingTransaction) {
+            return redirect()->back()->with('error', 'Anda sudah memiliki booking yang belum selesai. Silakan tunggu hingga booking Anda selesai sebelum melakukan booking lagi.');
+        }
+
+        // Periksa status kamar
         $kamar = Kamar::where('id', $request->id)->first();
+        
+        if ($kamar->status === 'unavailable') {
+            return redirect()->back()->with('error', 'Kamar ini tidak tersedia untuk booking.');
+        }
+
+        // Menangani upload file
+        $file = $request->file('bukti_pembayaran');
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $buktiPembayaranPath = $file->storeAs('assets/images', $filename, 'public');
+
+        if (!$buktiPembayaranPath) {
+            return back()->with('error', 'File upload failed');
+        }
+
+        // Buat data transaksi
         $data = [
             'id_users' => Auth::user()->id,
             'id_kamar' => $request->id,
             'status' => 'Belum Terverifikasi',
-            'bukti_pembayaran' => $request->bukti_pembayaran,
-            'tgl_pembayaran' => $request->tgl_pembayaran,
-            'nominal' => $kamar->harga,
+            'bukti_pembayaran' => $buktiPembayaranPath,
+            'tgl_pembayaran' => now()->toDateString(), // Menggunakan tanggal saat ini
+            'tgl_checkin' => $request->tgl_checkin,
+            'tgl_checkout' => $request->tgl_checkout,
+            'nominal' => $request->nominal, // Pastikan menggunakan nilai nominal dari form
         ];
+
+        // Simpan data transaksi
         Transaksi::create($data);
-        return redirect('/dashboard-user')->with('message','');
+
+        // Ubah status kamar menjadi 'unavailable'
+        $kamar->status = 'unavailable';
+        $kamar->save();
+
+        return redirect('/dashboard-user')->with('message', 'Berhasil melakukan booking kamar');
     }
 
-    function verifikasi(Request $request){
-        Transaksi::where('id_transaksi', $request->id_transaksi)->update(['status' => 'Terverifikasi']);
+    public function verifikasi(Request $request)
+    {
+        $transaksi = Transaksi::where('id_transaksi', $request->id_transaksi)->first();
+
+        if ($transaksi) {
+            $transaksi->update(['status' => 'Terverifikasi']);
+            
+            $kamar = Kamar::find($transaksi->id_kamar);
+            if ($kamar) {
+                $kamar->update(['status' => 'unavailable']);
+            }
+        }
+
         return redirect()->back();
     }
 
-    function verifikasipegawai(Request $request){
-        Transaksi::where('id_transaksi', $request->id_transaksi)->update(['status' => 'Terverifikasi']);
+    function verifikasipegawai(Request $request)
+    {
+        $transaksi = Transaksi::where('id_transaksi', $request->id_transaksi)->first();
+
+        if ($transaksi) {
+            $transaksi->update(['status' => 'Terverifikasi']);
+            
+            $kamar = Kamar::find($transaksi->id_kamar);
+            if ($kamar) {
+                $kamar->update(['status' => 'unavailable']);
+            }
+        }
+
+        return redirect()->back();
+    }
+
+    function selesaiTransaksi(Request $request)
+    {
+        $transaksi = Transaksi::where('id_transaksi', $request->id_transaksi)->first();
+
+        if ($transaksi) {
+            $transaksi->update(['status' => 'Selesai']);
+
+            $kamar = Kamar::find($transaksi->id_kamar);
+            if ($kamar) {
+                $kamar->update(['status' => 'available']);
+            }
+        }
+
         return redirect()->back();
     }
 

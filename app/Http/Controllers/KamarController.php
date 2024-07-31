@@ -28,7 +28,7 @@ class KamarController extends Controller
     $data = $request->validate([
         'tipe_kamar' => 'required|string|max:255',
         'no_kamar' => 'required|integer|unique:kamar,no_kamar',
-        'deskprisi' => 'required|string',  // Periksa penamaan yang benar
+        'deskprisi' => 'required|string',  
         'status' => 'required|string',
         'harga' => 'required|numeric',
     ]);
@@ -38,7 +38,7 @@ class KamarController extends Controller
     $kamar = new Kamar([
         'no_kamar' => $data['no_kamar'],
         'tipe_kamar' => $data['tipe_kamar'],
-        'deskripsi' => $data['deskprisi'],  // Periksa penamaan yang benar
+        'deskripsi' => $data['deskprisi'],  
         'status' => $data['status'],
         'harga' => $data['harga'],
     ]);
@@ -70,25 +70,21 @@ class KamarController extends Controller
             'harga' => 'required|numeric',
         ]);
 
-        // Temukan data kamar berdasarkan ID
         $kamar = Kamar::find($request->id);
 
         if ($kamar) {
-            // Update data kamar
             $kamar->tipe_kamar = $request->tipe_kamar;
             $kamar->no_kamar = $request->no_kamar;
             $kamar->deskripsi = $request->deskripsi;
             $kamar->status = $request->has('status') ? $request->status : $kamar->status;
             $kamar->harga = $request->harga;
 
-            // Simpan pembaruan dan periksa apakah pembaruan berhasil
             if ($kamar->save()) {
                 return redirect()->back()->with('message', 'Data kamar berhasil diupdate.');
             } else {
                 return redirect()->back()->withErrors('message', 'Gagal memperbarui data kamar.');
             }
         } else {
-            // Kamar tidak ditemukan
             return redirect()->back()->withErrors('message', 'Data kamar tidak ditemukan.');
         }
     }

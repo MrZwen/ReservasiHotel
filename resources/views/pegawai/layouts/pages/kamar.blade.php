@@ -31,10 +31,12 @@
     <div class="w-full overflow-x-auto">
         <table class="w-full whitespace-no-wrap">
             <thead>
-                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
+                <tr class="text-xs font-semibold tracking-wide text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800 text-center">
                     <th class="px-4 py-3">No</th>
                     <th class="px-4 py-3">Tipe Kamar</th>
                     <th class="px-4 py-3">No Kamar</th>
+                    <th class="px-4 py-3">Deskripsi</th>
+                    <th class="px-4 py-3">Status</th>
                     <th class="px-4 py-3">Harga</th>
                     <th class="px-4 py-3">Actions</th>
                 </tr>
@@ -45,6 +47,12 @@
                             <td class="px-4 py-3">{{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
                             <td class="px-4 py-3">{{ $item->tipe_kamar }}</td>
                             <td class="px-4 py-3">{{ $item->no_kamar }}</td>
+                            <td class="px-4 py-3 "><div class="flex items-center justify-center">
+                                <div class="overflow-hidden text-ellipsis whitespace-nowrap w-48" title="{{ $item->deskripsi }}">
+                                    {{ $item->deskripsi }}
+                                </div>
+                            </div></td>
+                            <td class="px-4 py-3">{{ $item->status }}</td>
                             <td class="px-4 py-3">Rp.{{ number_format($item->harga, 0, ',', '.') }}</td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center justify-center space-x-4 text-sm">

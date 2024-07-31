@@ -46,7 +46,7 @@ Route::middleware(['auth', 'checkRole:costumer'])->group(function(){
     Route::get('/dashboard-user', [UserController::class, 'dashboard'])->name('dashboard-user');
     Route::get('/dashboard-user/profile', [UserController::class, 'dashboardUser'])->name('profile-user');
     Route::get('/dashboard-user/book', [UserController::class, 'dashboardBook'])->name('booking');
-    Route::get('/booking-kamar', [UserController::class, 'booking']);
+    Route::get('/booking-kamar/{id}', [UserController::class, 'booking']);
 });
 
 Route::middleware(['auth', 'checkRole:admin'])->group(function(){
@@ -72,7 +72,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // Transaksi
     Route::get('/transaksi', [DataController::class, 'transaksiadmin']);
     Route::post('/admin/verifikasi-transaksi', [DataController::class, 'verifikasi']);
-
+    Route::post('/admin/selesai-transaksi', [DataController::class, 'selesaitransaksi']);
 
     // logout
     // Route::get('/logout', [AuthController::class, 'logout']);
@@ -96,7 +96,7 @@ Route::middleware(['auth', 'checkRole:admin'])->group(function(){
     // Transaksi
     Route::get('/transaksi-pegawai', [DataController::class, 'transaksipegawai']);
     Route::post('/pegawai/verifikasi-transaksi', [DataController::class, 'verifikasipegawai']);
-    
+    Route::post('/pegawai/selesai-transaksi', [DataController::class, 'selesaitransaksi']);
 });
 // Costumer
 Route::get('/kamar-user', [DataController::class, 'kamarAll']);

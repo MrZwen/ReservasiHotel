@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 @else 
-                    <a href="/booking-kamar"
+                    <a href="/booking-kamar/{{$data->id}}"
                     class="block text-white bg-yellow-500 hover:bg-yellow-700 font-medium rounded-lg text-sm px-8 py-2 text-center mt-4"
                     type="button">
                     Book Now
